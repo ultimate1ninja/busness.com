@@ -1,38 +1,38 @@
-/* General Styles */
+/* General body styling */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a; /* Dark background */
+    color: #f9d71c; /* Bright yellow text */
 }
 
+/* Header styling */
 header {
-    background-color: #333;
-    color: white;
+    background-color: #f9d71c; /* Bright yellow header */
     padding: 20px;
     text-align: center;
+    color: #1a1a1a; /* Dark text for contrast */
 }
 
-#searchBar {
-    width: 80%;
-    padding: 10px;
-    margin-top: 10px;
+header nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #1a1a1a;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
-/* Layout: Sidebar and Main Content */
-.container {
-    display: flex;
+header nav a:hover {
+    color: #e0e0e0; /* Light grey on hover */
 }
 
+/* Sidebar styling */
 .sidebar {
-    width: 250px;
-    background-color: #f4f4f4;
+    background-color: #333; /* Dark sidebar */
     padding: 20px;
-    height: 100vh;
-}
-
-.sidebar h2 {
-    color: #333;
+    color: #f9d71c; /* Bright text */
+    width: 200px;
+    min-height: 100vh; /* Full height sidebar */
 }
 
 .sidebar ul {
@@ -40,62 +40,100 @@ header {
     padding: 0;
 }
 
-.sidebar ul li {
-    margin: 15px 0;
-}
-
 .sidebar ul li a {
-    color: #333;
+    color: #f9d71c;
     text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
+    display: block;
+    padding: 10px 0;
+    transition: color 0.3s;
 }
 
 .sidebar ul li a:hover {
-    color: #007bff; /* Change link color on hover */
+    color: #e0e0e0; /* Light grey on hover */
 }
 
-/* Main Content (Product Listings) */
-main {
-    flex-grow: 1;
+/* Main container styling */
+.main-container {
+    display: flex;
+    align-items: flex-start; /* Aligns sidebar and content at the top */
+}
+
+/* Content styling */
+.content {
+    flex: 1;
     padding: 20px;
+    margin-left: 20px;
 }
 
-#product-container {
+/* Search bar styling */
+#search {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#search input {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #f9d71c; /* Border matching the theme */
+}
+
+/* Centering the product grid */
+.product-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    justify-content: center; /* Center the product grid */
+    gap: 20px; /* Space between the product cards */
+    margin: 0 auto; /* Center the grid horizontally */
+    max-width: 1200px; /* Restrict the width of the product grid */
 }
 
-.product {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 200px;
+/* Product card styling */
+.product-card {
+    background-color: #f9d71c; /* Bright yellow background */
+    color: #1a1a1a; /* Dark text */
+    padding: 10px;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 200px; /* Fixed width for consistency */
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.product h2 {
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+.product-card img {
+    max-width: 100%;
+    border-radius: 5px;
+    border: 2px solid #1a1a1a; /* Dark border around images */
+}
+
+.product-title {
+    font-size: 18px;
     margin: 10px 0;
 }
 
-.product p {
-    color: green;
+.product-link {
+    display: block;
+    margin-top: 10px;
+    color: #1a1a1a;
+    text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s;
 }
 
-/* Hover effect for product cards */
-.product:hover {
-    transform: translateY(-10px); /* Slightly move the product up on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+.product-link:hover {
+    color: #e0e0e0; /* Light grey on hover */
 }
 
 /* Footer */
 footer {
     background-color: #333;
-    color: white;
+    color: #f9d71c;
     text-align: center;
     padding: 10px;
     position: relative;
