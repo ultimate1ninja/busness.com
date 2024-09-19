@@ -7,52 +7,75 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <!-- Header Section -->
     <header>
         <h1>Clothing Store</h1>
-        <input type="text" id="searchBar" onkeyup="searchProducts()" placeholder="Search for clothes...">
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+        </nav>
     </header>
-<hr>
-    <div class="container">
+
+    <!-- Main Container: Sidebar + Content -->
+    <div class="main-container">
+
+        <!-- Sidebar Section -->
         <aside class="sidebar">
-            <h2>Categories</h2>
             <ul>
                 <li><a href="#">Men's Clothing</a></li>
                 <li><a href="#">Women's Clothing</a></li>
-                <li><a href="#">Kids' Clothing</a></li>
                 <li><a href="#">Accessories</a></li>
+                <li><a href="#">Sale</a></li>
             </ul>
         </aside>
 
-        <main>
-            <div id="product-container">
-                <div class="product" data-name="T-Shirt">
-                    <h2>T-Shirt</h2>
-                    <p>Price: $20</p>
+        <!-- Content Section -->
+        <section class="content">
+            
+            <!-- Search Bar -->
+            <div id="search">
+                <input type="text" placeholder="Search for products...">
+            </div>
+
+            <!-- Product Grid -->
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="tshirt.jpg" alt="T-shirt">
+                    <h2 class="product-title">T-shirt</h2>
+                    <p>$20</p>
+                    <a href="#" class="product-link">View Details</a>
                 </div>
-                <div class="product" data-name="Jeans">
-                    <h2>Jeans</h2>
-                    <p>Price: $40</p>
+
+                <div class="product-card">
+                    <img src="jeans.jpg" alt="Jeans">
+                    <h2 class="product-title">Jeans</h2>
+                    <p>$40</p>
+                    <a href="#" class="product-link">View Details</a>
                 </div>
-                <div class="product" data-name="Jacket">
-                    <h2>Jacket</h2>
-                    <p>Price: $60</p>
+
+                <div class="product-card">
+                    <img src="jacket.jpg" alt="Jacket">
+                    <h2 class="product-title">Jacket</h2>
+                    <p>$60</p>
+                    <a href="#" class="product-link">View Details</a>
                 </div>
-                <div class="product" data-name="Dress">
-                    <h2>Dress</h2>
-                    <p>Price: $50</p>
-                </div>
-                <div class="product" data-name="Shoes">
-                    <h2>Shoes</h2>
-                    <p>Price: $30</p>
+
+                <div class="product-card">
+                    <img src="shoes.jpg" alt="Shoes">
+                    <h2 class="product-title">Shoes</h2>
+                    <p>$50</p>
+                    <a href="#" class="product-link">View Details</a>
                 </div>
             </div>
-        </main>
+        </section>
     </div>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Clothing Store - All Rights Reserved</p>
     </footer>
 
-    <script src="scripts.js"></script>
 </body>
 </html>
