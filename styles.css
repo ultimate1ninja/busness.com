@@ -12,12 +12,12 @@ header {
     padding: 20px;
     text-align: center;
     color: white;
-    border-bottom: 3px solid black; /* Add bottom border */
+    border-bottom: 3px solid white; /* Add bottom border */
 }
 
 header nav a {
     margin: 0 15px;
-    text-decoration: none;
+    text-decoration: underline;
     color: cyan;
     font-weight: bold;
     transition: color 0.3s;
@@ -122,7 +122,7 @@ header nav a:hover {
 .product-link {
     display: block;
     margin-top: 10px;
-    color: #1a1a1a;
+    color: cyan;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
