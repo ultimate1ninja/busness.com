@@ -29,10 +29,10 @@ header nav a:hover {
 /* Sidebar styling */
 .sidebar {
     background-color: crimson;
-    padding: 20 px;
+    padding: 20px;
     color: white;
-    width: 200 px;
-    min-height: 100 vh; /* Full height sidebar */
+    width: 200px;
+    min-height: 100vh; /* Full height sidebar */
 }
 
 .sidebar ul {
@@ -91,7 +91,7 @@ header nav a:hover {
 
 /* Product card styling */
 .product-card {
-    background-color: red
+    background-color: red; /* Missing semicolon fixed */
     color: #1a1a1a; /* Dark text */
     padding: 10px;
     text-align: center;
@@ -135,8 +135,8 @@ footer {
     background-color: crimson;
     color: white;
     text-align: center;
-    padding: 10 px;
+    padding: 10px; /* Fixed spacing */
     position: relative;
     bottom: 0;
-    width: 100 %;
+    width: 100%; /* Fixed width */
 }
