@@ -12,6 +12,7 @@ header {
     padding: 20px;
     text-align: center;
     color: black;
+    border-bottom: 3px solid #f9d71c; /* Add bottom border */
 }
 
 header nav a {
@@ -33,6 +34,7 @@ header nav a:hover {
     color: white;
     width: 200px;
     min-height: 100vh; /* Full height sidebar */
+   border-right: 3px solid #f9d71c; /* Add right border */
 }
 
 .sidebar ul {
@@ -139,4 +141,5 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%; /* Fixed width */
+    border-top: 3px solid #f9d71c; 
 }
