@@ -93,7 +93,7 @@ header nav a:hover {
 
 /* Product card styling */
 .product-card {
-    background-color: maroon; /* Missing semicolon fixed */
+    background-color: grey; /* Missing semicolon fixed */
     color: #1a1a1a; /* Dark text */
     padding: 10px;
     text-align: center;
