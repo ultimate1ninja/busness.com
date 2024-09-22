@@ -18,7 +18,7 @@ header {
 header nav a {
     margin: 0 15px;
     text-decoration: none;
-    color: #1a1a1a;
+    color: cyan;
     font-weight: bold;
     transition: color 0.3s;
 }
@@ -94,7 +94,7 @@ header nav a:hover {
 /* Product card styling */
 .product-card {
     background-color: black; /* Missing semicolon fixed */
-    color: #1a1a1a; /* Dark text */
+    color: white; /* Dark text */
     padding: 10px;
     text-align: center;
     border-radius: 5px;
