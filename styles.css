@@ -8,7 +8,7 @@ body {
 
 /* Header styling */
 header {
-    background-color: crimson;
+    background-color: red;
     padding: 20px;
     text-align: center;
     color: black;
@@ -29,7 +29,7 @@ header nav a:hover {
 
 /* Sidebar styling */
 .sidebar {
-    background-color: crimson;
+    background-color: red;
     padding: 20px;
     color: white;
     width: 200px;
@@ -93,7 +93,7 @@ header nav a:hover {
 
 /* Product card styling */
 .product-card {
-    background-color: red; /* Missing semicolon fixed */
+    background-color: maroon; /* Missing semicolon fixed */
     color: #1a1a1a; /* Dark text */
     padding: 10px;
     text-align: center;
@@ -134,7 +134,7 @@ header nav a:hover {
 
 /* Footer */
 footer {
-    background-color: crimson;
+    background-color: red;
     color: white;
     text-align: center;
     padding: 10px; /* Fixed spacing */
