@@ -25,9 +25,6 @@
         <aside class="sidebar">
             <ul>
                 <li><a href="#">Men's Clothing</a></li>
-                <li><a href="#">Women's Clothing</a></li>
-                <li><a href="#">Accessories</a></li>
-                <li><a href="#">Sale</a></li>
             </ul>
         </aside>
 
@@ -46,6 +43,7 @@
                     <h2 class="product-title">T-shirt</h2>
                     <p>$20</p>
                     <a href="#" class="product-link">View Details</a>
+                    <button class="order-btn" onclick="orderNow('T-shirt', '20', 'tshirt.jpg')">Order Now</button>
                 </div>
 
                 <div class="product-card">
@@ -53,6 +51,7 @@
                     <h2 class="product-title">Jeans</h2>
                     <p>$40</p>
                     <a href="#" class="product-link">View Details</a>
+                    <button class="order-btn" onclick="orderNow('Jeans', '40', 'jeans.jpg')">Order Now</button>
                 </div>
 
                 <div class="product-card">
@@ -60,13 +59,7 @@
                     <h2 class="product-title">Jacket</h2>
                     <p>$60</p>
                     <a href="#" class="product-link">View Details</a>
-                </div>
-
-                <div class="product-card">
-                    <img src="shoes.jpg" alt="Shoes">
-                    <h2 class="product-title">Shoes</h2>
-                    <p>$50</p>
-                    <a href="#" class="product-link">View Details</a>
+                    <button class="order-btn" onclick="orderNow('Jacket', '60', 'jacket.jpg')">Order Now</button>
                 </div>
             </div>
         </section>
@@ -76,6 +69,16 @@
     <footer>
         <p>&copy; 2024 Clothing Store - All Rights Reserved</p>
     </footer>
+
+    <!-- JavaScript for WhatsApp Order Button -->
+    <script>
+    function orderNow(productName, productPrice, productImage) {
+        const message = `Order details:\nProduct: ${productName}\nPrice: $${productPrice}\nImage: https://yourwebsite.com/${productImage}`;
+        const whatsappLink = `https://wa.me/?text=${encodeURIComponent(message)}`;
+        
+        window.open(whatsappLink, '_blank');
+    }
+    </script>
 
 </body>
 </html>
