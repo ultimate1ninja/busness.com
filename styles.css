@@ -1,26 +1,24 @@
-/* General body styling */
+
 body {
     margin: 0;
     font-family: Helvetica, sans-serif;
-    background-color: grey; /* Dark background */
-    color: #f9d71c; /* Bright yellow text */
+    background-color: grey; 
+    color: #f9d71c; 
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensures full height */
+    min-height: 100vh; 
 }
-
-/* Header styling */
 header {
     background-color: black;
     padding: 20px;
     text-align: center;
     color: white;
     border-bottom: 3px solid white;
-    border-bottom-left-radius: 30px; /* Curved bottom corners */
+    border-bottom-left-radius: 30px; 
     border-bottom-right-radius: 30px;
 }
 
-/* Navigation links in header */
+
 header nav a {
     margin: 0 15px;
     text-decoration: underline;
@@ -30,28 +28,27 @@ header nav a {
 }
 
 header nav a:hover {
-    color: #e0e0e0; /* Light grey on hover */
+    color: #e0e0e0; 
 }
 
-/* Main container layout for sidebar and content */
+
 .main-container {
     display: flex;
     flex-grow: 1;
 }
 
-/* Sidebar styling */
 .sidebar {
     background-color: black;
     padding: 20px;
     color: white;
     width: 200px;
-    min-height: 100%; /* Full height sidebar */
+    min-height: 100%; 
     border-right: 3px solid white;
-    border-top-left-radius: 30px; /* Curved top-left */
-    border-bottom-left-radius: 30px; /* Curved bottom-left */
+    border-top-left-radius: 30px; 
+    border-bottom-left-radius: 30px; 
 }
 
-/* Sidebar links */
+
 .sidebar ul {
     list-style-type: none;
     padding: 0;
@@ -66,19 +63,18 @@ header nav a:hover {
 }
 
 .sidebar ul li a:hover {
-    color: #e0e0e0; /* Light grey on hover */
+    color: #e0e0e0; 
 }
 
-/* Content styling */
 .content {
     flex-grow: 1;
     padding: 20px;
     margin-left: 20px;
     background-color: #f4f4f4;
-    border-radius: 20px; /* Smooth corners for content */
+    border-radius: 20px; 
 }
 
-/* Search bar styling */
+
 #search {
     text-align: center;
     margin-bottom: 20px;
@@ -89,20 +85,19 @@ header nav a:hover {
     padding: 10px;
     font-size: 16px;
     border-radius: 5px;
-    border: 1px solid #f9d71c; /* Border matching the theme */
+    border: 1px solid #f9d71c; 
 }
 
-/* Centering the product grid */
 .product-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Center the product grid */
-    gap: 20px; /* Space between the product cards */
-    margin: 0 auto; /* Center the grid horizontally */
-    max-width: 1200px; /* Restrict the width of the product grid */
+    justify-content: center; 
+    gap: 20px; 
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
-/* Product card styling */
+
 .product-card {
     background-color: black;
     color: white;
@@ -122,7 +117,7 @@ header nav a:hover {
 .product-card img {
     max-width: 100%;
     border-radius: 5px;
-    border: 2px solid #1a1a1a; /* Dark border around images */
+    border: 2px solid #1a1a1a; 
 }
 
 .product-title {
@@ -140,18 +135,18 @@ header nav a:hover {
 }
 
 .product-link:hover {
-    color: #e0e0e0; /* Light grey on hover */
+    color: #e0e0e0; 
 }
 
-/* Footer styling */
+
 footer {
     background-color: black;
     color: white;
     text-align: center;
     padding: 20px;
     border-top: 3px solid white;
-    border-top-left-radius: 30px; /* Curved top-left corners */
-    border-top-right-radius: 30px; /* Curved top-right corners */
-    margin-top: auto; /* Stick to the bottom */
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    margin-top: auto; 
 }
 
