@@ -6,7 +6,7 @@ body {
     color: #f9d71c; /* Bright yellow text */
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh; /* Ensures full height */
 }
 
 /* Header styling */
@@ -15,9 +15,9 @@ header {
     padding: 20px;
     text-align: center;
     color: white;
-    border-bottom: 5px solid cyan; /* Add bottom border */
-    border-bottom-left-radius: 50px; /* Rounded bottom-left */
-    border-bottom-right-radius: 50px; /* Rounded bottom-right */
+    border-bottom: 3px solid white;
+    border-bottom-left-radius: 30px; /* Curved bottom corners */
+    border-bottom-right-radius: 30px;
 }
 
 /* Navigation links in header */
@@ -46,11 +46,12 @@ header nav a:hover {
     color: white;
     width: 200px;
     min-height: 100%; /* Full height sidebar */
-    border-right: 5px solid cyan; /* Attractive right border */
-    border-top-left-radius: 50px; /* Rounded top-left */
-    border-bottom-left-radius: 50px; /* Rounded bottom-left */
+    border-right: 3px solid white;
+    border-top-left-radius: 30px; /* Curved top-left */
+    border-bottom-left-radius: 30px; /* Curved bottom-left */
 }
 
+/* Sidebar links */
 .sidebar ul {
     list-style-type: none;
     padding: 0;
@@ -72,8 +73,8 @@ header nav a:hover {
 .content {
     flex-grow: 1;
     padding: 20px;
-    background-color: #f4f4f4;
     margin-left: 20px;
+    background-color: #f4f4f4;
     border-radius: 20px; /* Smooth corners for content */
 }
 
@@ -83,8 +84,8 @@ footer {
     color: white;
     text-align: center;
     padding: 20px;
-    border-top: 5px solid cyan; /* Add top border */
-    border-top-left-radius: 50px; /* Rounded top-left */
-    border-top-right-radius: 50px; /* Rounded top-right */
-    margin-top: auto;
+    border-top: 3px solid white;
+    border-top-left-radius: 30px; /* Curved top-left corners */
+    border-top-right-radius: 30px; /* Curved top-right corners */
+    margin-top: auto; /* Stick to the bottom */
 }
