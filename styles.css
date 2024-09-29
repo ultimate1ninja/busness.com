@@ -4,6 +4,9 @@ body {
     font-family: Helvetica, sans-serif;
     background-color: grey; /* Dark background */
     color: #f9d71c; /* Bright yellow text */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
 /* Header styling */
@@ -12,9 +15,12 @@ header {
     padding: 20px;
     text-align: center;
     color: white;
-    border-bottom: 3px solid white; /* Add bottom border */
+    border-bottom: 5px solid cyan; /* Add bottom border */
+    border-bottom-left-radius: 50px; /* Rounded bottom-left */
+    border-bottom-right-radius: 50px; /* Rounded bottom-right */
 }
 
+/* Navigation links in header */
 header nav a {
     margin: 0 15px;
     text-decoration: underline;
@@ -27,14 +33,22 @@ header nav a:hover {
     color: #e0e0e0; /* Light grey on hover */
 }
 
+/* Main container layout for sidebar and content */
+.main-container {
+    display: flex;
+    flex-grow: 1;
+}
+
 /* Sidebar styling */
 .sidebar {
     background-color: black;
     padding: 20px;
     color: white;
     width: 200px;
-    min-height: 100vh; /* Full height sidebar */
-   border-right: 3px solid : black; /* Add right border */
+    min-height: 100%; /* Full height sidebar */
+    border-right: 5px solid cyan; /* Attractive right border */
+    border-top-left-radius: 50px; /* Rounded top-left */
+    border-bottom-left-radius: 50px; /* Rounded bottom-left */
 }
 
 .sidebar ul {
@@ -54,92 +68,23 @@ header nav a:hover {
     color: #e0e0e0; /* Light grey on hover */
 }
 
-/* Main container styling */
-.main-container {
-    display: flex;
-    align-items: flex-start; /* Aligns sidebar and content at the top */
-}
-
 /* Content styling */
 .content {
-    flex: 1;
+    flex-grow: 1;
     padding: 20px;
+    background-color: #f4f4f4;
     margin-left: 20px;
+    border-radius: 20px; /* Smooth corners for content */
 }
 
-/* Search bar styling */
-#search {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-#search input {
-    width: 50%;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #f9d71c; /* Border matching the theme */
-}
-
-/* Centering the product grid */
-.product-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Center the product grid */
-    gap: 20px; /* Space between the product cards */
-    margin: 0 auto; /* Center the grid horizontally */
-    max-width: 1200px; /* Restrict the width of the product grid */
-}
-
-/* Product card styling */
-.product-card {
-    background-color: black; /* Missing semicolon fixed */
-    color: white; /* Dark text */
-    padding: 10px;
-    text-align: center;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    width: 200px; /* Fixed width for consistency */
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-}
-
-.product-card img {
-    max-width: 100%;
-    border-radius: 5px;
-    border: 2px solid #1a1a1a; /* Dark border around images */
-}
-
-.product-title {
-    font-size: 18px;
-    margin: 10px 0;
-}
-
-.product-link {
-    display: block;
-    margin-top: 10px;
-    color: cyan;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-.product-link:hover {
-    color: #e0e0e0; /* Light grey on hover */
-}
-
-/* Footer */
+/* Footer styling */
 footer {
     background-color: black;
     color: white;
     text-align: center;
-    padding: 10px; /* Fixed spacing */
-    position: relative;
-    bottom: 0;
-    width: 100%; /* Fixed width */
-    border-top: 3px solid black; 
+    padding: 20px;
+    border-top: 5px solid cyan; /* Add top border */
+    border-top-left-radius: 50px; /* Rounded top-left */
+    border-top-right-radius: 50px; /* Rounded top-right */
+    margin-top: auto;
 }
