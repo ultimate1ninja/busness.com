@@ -33,11 +33,11 @@
             
             <!-- Search Bar -->
             <div id="search">
-                <input type="text" placeholder="Search for products...">
+                <input type="text" id="searchInput" placeholder="Search for products..." onkeyup="searchProducts()">
             </div>
 
             <!-- Product Grid -->
-            <div class="product-grid">
+            <div class="product-grid" id="productGrid">
                 <div class="product-card">
                     <img src="tshirt.jpg" alt="T-shirt">
                     <h2 class="product-title">T-shirt</h2>
@@ -62,6 +62,25 @@
                     <button class="order-btn" onclick="orderNow('Jacket', '60', 'jacket.jpg')">Order Now</button>
                 </div>
             </div>
+
+            <!-- Portfolio Section -->
+            <div class="portfolio">
+                <h2>Our Portfolio</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item">
+                        <img src="portfolio1.jpg" alt="Portfolio Item 1">
+                        <h3>Fashion Design 1</h3>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="portfolio2.jpg" alt="Portfolio Item 2">
+                        <h3>Fashion Design 2</h3>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="portfolio3.jpg" alt="Portfolio Item 3">
+                        <h3>Fashion Design 3</h3>
+                    </div>
+                </div>
+            </div>
         </section>
     </div>
 
@@ -69,6 +88,7 @@
     <footer>
         <p>&copy; 2024 Clothing Store - All Rights Reserved</p>
     </footer>
+    
     <script>
     function orderNow(productName, productPrice, productImage) {
         const phoneNumber = "923202102132"; // Replace with your WhatsApp number
@@ -77,9 +97,23 @@
         
         window.open(whatsappLink, '_blank');
     }
-    </script>
 
-    
+    function searchProducts() {
+        const input = document.getElementById('searchInput');
+        const filter = input.value.toLowerCase();
+        const productGrid = document.getElementById('productGrid');
+        const productCards = productGrid.getElementsByClassName('product-card');
+
+        for (let i = 0; i < productCards.length; i++) {
+            const title = productCards[i].getElementsByClassName('product-title')[0].textContent.toLowerCase();
+            if (title.includes(filter)) {
+                productCards[i].style.display = ""; // Show
+            } else {
+                productCards[i].style.display = "none"; // Hide
+            }
+        }
+    }
+    </script>
 
 </body>
 </html>
