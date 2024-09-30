@@ -151,4 +151,33 @@ footer {
     border-top-right-radius: 30px;
     margin-top: auto; 
 }
+.portfolio {
+    margin-top: 20px;
+}
+
+.portfolio h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.portfolio-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.portfolio-item {
+    text-align: center;
+    margin: 10px;
+}
+
+.portfolio-item img {
+    width: 150px; /* Adjust as needed */
+    height: auto;
+    border-radius: 8px;
+}
+
+.portfolio-item h3 {
+    margin-top: 10px;
+}
 
