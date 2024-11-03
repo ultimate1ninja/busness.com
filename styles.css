@@ -1,7 +1,7 @@
 /* Global Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    font-family: 'Roboto', sans-serif; /* Modern font */
+    background-color: #f4f4f4; /* Soft light gray background */
     color: #333;
     margin: 0;
     padding: 0;
@@ -9,7 +9,7 @@ body {
 
 /* Header Styles */
 .header {
-    background-color: #333;
+    background-color: #333; /* Dark background */
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -30,126 +30,133 @@ body {
 }
 
 .header nav a:hover {
-    color: #f39c12;
+    color: #f39c12; /* Hover color for links */
 }
 
 /* Main Container */
 .main-container {
     display: flex;
     margin: 2rem;
-    gap: 1.5rem;
+    gap: 1.5rem; /* Space between sidebar and content */
 }
 
 /* Sidebar Styles */
 .sidebar {
-    width: 200px;
+    width: 200px; /* Fixed width for sidebar */
     background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for sidebar */
     padding: 1rem;
     border-radius: 8px;
 }
 
 .sidebar ul {
-    list-style-type: none;
+    list-style-type: none; /* No bullets for list */
     padding: 0;
 }
 
 .sidebar li a {
     display: block;
     padding: 0.5rem;
-    color: #333;
+    color: #333; /* Dark text for links */
     text-decoration: none;
     transition: background 0.3s;
 }
 
 .sidebar li a:hover {
-    background-color: #f39c12;
-    color: #fff;
-    border-radius: 4px;
+    background-color: #f39c12; /* Highlight on hover */
+    color: #fff; /* White text on hover */
+    border-radius: 4px; /* Rounded corners on hover */
 }
 
 /* Content Section */
 .content {
-    flex: 1;
+    flex: 1; /* Fill available space */
 }
 
 /* Search Bar */
 #search input {
     width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-bottom: 1.5rem;
+    padding: 0.8rem; /* Padding for search input */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+    margin-bottom: 1.5rem; /* Space below search bar */
 }
 
 /* Product Grid */
 .product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1rem;
+    display: grid; /* Grid layout */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive columns */
+    gap: 1rem; /* Space between cards */
 }
 
 .product-card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
-    text-align: center;
-    transition: transform 0.3s;
+    background-color: #fff; /* White background for cards */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    padding: 1.5rem; /* Padding for cards */
+    transition: transform 0.3s ease; /* Smooth transformation */
+    text-align: center; /* Center align text */
 }
 
 .product-card:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px); /* Lift effect on hover */
 }
 
 .product-card img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 1rem;
+    width: 100%; /* Full-width images */
+    border-radius: 8px; /* Rounded corners for images */
+    margin-bottom: 1rem; /* Space below images */
 }
 
 .product-link, .order-btn {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    margin-top: 0.5rem;
-    color: #fff;
-    background-color: #333;
-    border: none;
-    border-radius: 4px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    display: inline-block; /* Inline block for buttons */
+    padding: 0.5rem 1rem; /* Padding for buttons */
+    margin-top: 0.5rem; /* Space above buttons */
+    color: #fff; /* White text */
+    background-color: #333; /* Button background */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners for buttons */
+    text-decoration: none; /* No underline */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
 }
 
 .product-link:hover, .order-btn:hover {
-    background-color: #f39c12;
+    background-color: #f39c12; /* Hover color for buttons */
+    transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
 /* Portfolio Section */
 .portfolio {
-    margin-top: 2rem;
-}
-
-.portfolio h2 {
-    margin-bottom: 1rem;
+    margin-top: 2rem; /* Space above portfolio */
 }
 
 .portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1rem;
+    display: grid; /* Grid layout for portfolio */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive columns */
+    gap: 1rem; /* Space between portfolio items */
+}
+
+.portfolio-item {
+    background-color: #fff; /* White background for portfolio items */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    padding: 1rem; /* Padding for portfolio items */
+    text-align: center; /* Center align text */
 }
 
 .portfolio-item img {
-    width: 100%;
-    border-radius: 8px;
+    width: 100%; /* Full-width images */
+    border-radius: 8px; /* Rounded corners for images */
 }
 
-/* Footer */
+/* Footer Styles */
 footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #333;
-    color: #fff;
-    margin-top: 2rem;
+    text-align: center; /* Center align footer text */
+    padding: 1rem; /* Padding for footer */
+    background-color: #333; /* Dark background */
+    color: #fff; /* White text */
+    position: relative; /* Ensure footer stays at bottom */
+    bottom: 0;
+    width: 100%; /* Full width */
 }
