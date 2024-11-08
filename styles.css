@@ -92,7 +92,7 @@ body {
 }
 
 .slider {
-    animation: slideAnimation 9s infinite;
+    animation: slideAnimation 20s infinite;
 }
 
 /* Sidebar */
