@@ -1,7 +1,7 @@
 /* Global Styles */
 body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #f4f4f4, #e0e0e0); 
+    background: linear-gradient(135deg, #fdfbfb, #ebedee); /* Light gradient background */
     color: #333;
     margin: 0;
     padding: 0;
@@ -10,13 +10,13 @@ body {
 
 /* Header Styles */
 .header {
-    background-color: #222; /* Darker background for contrast */
+    background: linear-gradient(45deg, #ff6f61, #d95e40); /* Gradient for header */
     color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1.2rem 2rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -25,7 +25,7 @@ body {
 .header h1 {
     font-size: 2rem;
     margin: 0;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
 }
 
 .header nav a {
@@ -37,29 +37,29 @@ body {
 }
 
 .header nav a:hover {
-    color: #f39c12; /* Warm yellow for hover */
-    transform: scale(1.1); /* Subtle grow effect */
+    color: #ffdf85; /* Golden yellow on hover */
+    transform: scale(1.1);
 }
 
 /* Main Container */
 .main-container {
     display: flex;
     margin: 2rem;
-    gap: 2rem; /* Increased gap for breathing space */
+    gap: 2rem;
 }
 
 /* Sidebar Styles */
 .sidebar {
-    width: 240px; /* Wider sidebar */
-    background-color: #fff;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 240px;
+    background: linear-gradient(135deg, #ffdf85, #f9c74f); /* Warm gradient */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     padding: 1.5rem;
     border-radius: 10px;
     transition: transform 0.3s ease;
 }
 
 .sidebar:hover {
-    transform: translateX(-10px); /* Sidebar slide-in effect */
+    transform: translateX(-8px); /* Slide-in effect */
 }
 
 .sidebar ul {
@@ -70,14 +70,14 @@ body {
 .sidebar li a {
     display: block;
     padding: 0.8rem;
-    color: #333;
+    color: #4d3319; /* Dark text */
     font-size: 1rem;
     text-decoration: none;
     transition: background 0.3s, color 0.3s;
 }
 
 .sidebar li a:hover {
-    background-color: #f39c12;
+    background-color: #ff6f61;
     color: #fff;
     border-radius: 8px;
 }
@@ -99,7 +99,7 @@ body {
 }
 
 #search input:focus {
-    border-color: #f39c12; /* Highlight search on focus */
+    border-color: #f9c74f;
 }
 
 /* Product Grid */
@@ -110,7 +110,7 @@ body {
 }
 
 .product-card {
-    background-color: #fff;
+    background: linear-gradient(135deg, #ffffff, #ffe5d9);
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     padding: 2rem;
@@ -121,8 +121,8 @@ body {
 }
 
 .product-card:hover {
-    transform: translateY(-10px); /* More pronounced lift effect */
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
 .product-card img {
@@ -133,7 +133,7 @@ body {
 }
 
 .product-card:hover img {
-    transform: scale(1.05); /* Subtle zoom effect on image hover */
+    transform: scale(1.05);
 }
 
 .product-link, .order-btn {
@@ -141,7 +141,7 @@ body {
     padding: 0.8rem 1.5rem;
     margin-top: 1rem;
     color: #fff;
-    background-color: #333;
+    background-color: #ff6f61;
     border: none;
     border-radius: 6px;
     font-size: 1.1rem;
@@ -151,7 +151,7 @@ body {
 }
 
 .product-link:hover, .order-btn:hover {
-    background-color: #f39c12;
+    background-color: #f9c74f;
     transform: scale(1.1);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
@@ -168,7 +168,7 @@ body {
 }
 
 .portfolio-item {
-    background-color: #fff;
+    background: linear-gradient(135deg, #d1f2eb, #a3e4d7); /* Cool gradient for portfolio */
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     padding: 2rem;
@@ -189,28 +189,28 @@ body {
 }
 
 .portfolio-item:hover img {
-    transform: scale(1.05); /* Zoom effect for images */
+    transform: scale(1.05);
 }
 
 /* Footer Styles */
 footer {
     text-align: center;
     padding: 2rem;
-    background-color: #222;
+    background: linear-gradient(45deg, #6a0572, #ab47bc); /* Vivid footer gradient */
     color: #fff;
     position: relative;
     bottom: 0;
     width: 100%;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); /* Shadow at top of footer */
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
 }
 
 footer a {
-    color: #f39c12;
+    color: #ffdf85;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 footer a:hover {
-    color: #fff;
+    color: #ff6f61;
 }
