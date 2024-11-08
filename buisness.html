@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clothing Store - Hero Section</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Clothing Store</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+
+    <!-- Header -->
+    <header class="header">
+        <h1>Fashion Hub</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
 
     <!-- Hero Section with CSS Slider -->
     <section class="banner">
         <div class="slider-wrapper">
             <div class="slider">
-                <div class="slide">
+                <div class="slide active">
                     <img src="slide1.jpg" alt="Fashion Image 1">
                     <div class="slide-caption">
                         <h2>Discover Your Style</h2>
@@ -38,5 +50,47 @@
         </div>
     </section>
 
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar for Categories -->
+        <aside class="sidebar">
+            <h3>Categories</h3>
+            <ul>
+                <li><a href="#new-arrivals">New Arrivals</a></li>
+                <li><a href="#men">Men</a></li>
+                <li><a href="#women">Women</a></li>
+                <li><a href="#accessories">Accessories</a></li>
+                <li><a href="#sale">Sale</a></li>
+            </ul>
+        </aside>
+
+        <!-- Content Section -->
+        <section class="content">
+            <!-- Featured Products Grid -->
+            <h2>Featured Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="product1.jpg" alt="Product Image">
+                    <h3>Stylish Jacket</h3>
+                    <p class="price">$79.99</p>
+                    <a href="#" class="product-link">View Details</a>
+                </div>
+                <div class="product-card">
+                    <img src="product2.jpg" alt="Product Image">
+                    <h3>Casual Shoes</h3>
+                    <p class="price">$49.99</p>
+                    <a href="#" class="product-link">View Details</a>
+                </div>
+                <!-- Additional Product Cards Here -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Fashion Hub. All Rights Reserved. <a href="#privacy-policy">Privacy Policy</a></p>
+    </footer>
+
 </body>
+
 </html>
