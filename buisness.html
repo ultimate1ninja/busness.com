@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colorful Web Page</title>
+    <title>Fashion Hub</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Header -->
     <header class="header">
-        <h1>My Colorful Site</h1>
+        <h1>Fashion Hub</h1>
         <nav>
             <a href="#home">Home</a>
-            <a href="#products">Products</a>
-            <a href="#portfolio">Portfolio</a>
+            <a href="#collection">Collection</a>
+            <a href="#new-arrivals">New Arrivals</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
@@ -23,52 +23,59 @@
         <!-- Sidebar -->
         <aside class="sidebar">
             <ul>
-                <li><a href="#link1">Link 1</a></li>
-                <li><a href="#link2">Link 2</a></li>
-                <li><a href="#link3">Link 3</a></li>
-                <li><a href="#link4">Link 4</a></li>
+                <li><a href="#men">Men's Fashion</a></li>
+                <li><a href="#women">Women's Fashion</a></li>
+                <li><a href="#accessories">Accessories</a></li>
+                <li><a href="#sale">Sale</a></li>
             </ul>
         </aside>
 
         <!-- Content Section -->
         <section class="content">
-            <!-- Search Bar -->
-            <div id="search">
-                <input type="text" placeholder="Search...">
+            <!-- Banner with animation -->
+            <div class="banner">
+                <img src="banner.jpg" alt="Fashion Banner" class="banner-img">
+                <div class="banner-text">
+                    <h2>Discover the Latest Trends</h2>
+                    <p>Stay stylish and trendy with our exclusive collections.</p>
+                    <a href="#shop-now" class="banner-btn">Shop Now</a>
+                </div>
             </div>
 
             <!-- Product Grid -->
-            <div id="products" class="product-grid">
+            <div id="collection" class="product-grid">
                 <div class="product-card">
                     <img src="product1.jpg" alt="Product 1">
-                    <h2>Product 1</h2>
-                    <p>Description of Product 1.</p>
-                    <a href="#buy" class="product-link">View Product</a>
-                    <button class="order-btn">Order Now</button>
+                    <h2>Summer Dress</h2>
+                    <p>$49.99</p>
+                    <a href="#details" class="product-link">View Details</a>
                 </div>
                 <div class="product-card">
                     <img src="product2.jpg" alt="Product 2">
-                    <h2>Product 2</h2>
-                    <p>Description of Product 2.</p>
-                    <a href="#buy" class="product-link">View Product</a>
-                    <button class="order-btn">Order Now</button>
+                    <h2>Casual Shirt</h2>
+                    <p>$29.99</p>
+                    <a href="#details" class="product-link">View Details</a>
                 </div>
                 <!-- Add more product cards as needed -->
             </div>
 
-            <!-- Portfolio Section -->
-            <div id="portfolio" class="portfolio">
-                <h2>Our Portfolio</h2>
-                <div class="portfolio-grid">
-                    <div class="portfolio-item">
-                        <img src="portfolio1.jpg" alt="Portfolio Item 1">
-                        <h3>Portfolio Item 1</h3>
+            <!-- New Arrivals Section -->
+            <div id="new-arrivals" class="new-arrivals">
+                <h2>New Arrivals</h2>
+                <div class="arrivals-grid">
+                    <div class="arrival-item">
+                        <img src="arrival1.jpg" alt="Arrival 1">
+                        <h3>Floral Top</h3>
+                        <p>$39.99</p>
+                        <a href="#details" class="arrival-link">Shop Now</a>
                     </div>
-                    <div class="portfolio-item">
-                        <img src="portfolio2.jpg" alt="Portfolio Item 2">
-                        <h3>Portfolio Item 2</h3>
+                    <div class="arrival-item">
+                        <img src="arrival2.jpg" alt="Arrival 2">
+                        <h3>Denim Jacket</h3>
+                        <p>$79.99</p>
+                        <a href="#details" class="arrival-link">Shop Now</a>
                     </div>
-                    <!-- Add more portfolio items as needed -->
+                    <!-- Add more new arrivals as needed -->
                 </div>
             </div>
         </section>
@@ -76,7 +83,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 My Colorful Site. All rights reserved.</p>
+        <p>&copy; 2024 Fashion Hub. All rights reserved.</p>
         <p><a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
     </footer>
 </body>
