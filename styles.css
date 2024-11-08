@@ -1,31 +1,24 @@
 /* Global Styles */
 body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #fdfbfb, #ebedee); /* Light gradient background */
+    background: linear-gradient(135deg, #f3f0ff, #fae8e1);
     color: #333;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
 }
 
 /* Header Styles */
 .header {
-    background: linear-gradient(45deg, #ff6f61, #d95e40); /* Gradient for header */
+    background: linear-gradient(45deg, #ff7eb9, #ff65a3);
     color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1.2rem 2rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
 }
 
 .header h1 {
-    font-size: 2rem;
-    margin: 0;
-    letter-spacing: 1.5px;
+    font-size: 2.2rem;
 }
 
 .header nav a {
@@ -33,33 +26,61 @@ body {
     text-decoration: none;
     margin: 0 1.5rem;
     font-size: 1.1rem;
-    transition: color 0.3s, transform 0.2s;
+    transition: color 0.3s, transform 0.3s;
 }
 
 .header nav a:hover {
-    color: #ffdf85; /* Golden yellow on hover */
+    color: #ffdf85;
     transform: scale(1.1);
 }
 
-/* Main Container */
-.main-container {
-    display: flex;
-    margin: 2rem;
-    gap: 2rem;
+/* Banner */
+.banner {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
 }
 
-/* Sidebar Styles */
+.banner-img {
+    width: 100%;
+    animation: zoom 20s infinite alternate ease-in-out;
+}
+
+@keyframes zoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.banner-btn {
+    padding: 0.8rem 1.5rem;
+    background: #ff65a3;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.banner-btn:hover {
+    background-color: #ff7eb9;
+    transform: scale(1.05);
+}
+
+/* Sidebar */
 .sidebar {
-    width: 240px;
-    background: linear-gradient(135deg, #ffdf85, #f9c74f); /* Warm gradient */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #ff9a8b, #ff6f61);
+    color: #fff;
     padding: 1.5rem;
     border-radius: 10px;
     transition: transform 0.3s ease;
-}
-
-.sidebar:hover {
-    transform: translateX(-8px); /* Slide-in effect */
 }
 
 .sidebar ul {
@@ -70,147 +91,62 @@ body {
 .sidebar li a {
     display: block;
     padding: 0.8rem;
-    color: #4d3319; /* Dark text */
-    font-size: 1rem;
+    color: #fff;
     text-decoration: none;
     transition: background 0.3s, color 0.3s;
 }
 
 .sidebar li a:hover {
     background-color: #ff6f61;
-    color: #fff;
     border-radius: 8px;
-}
-
-/* Content Section */
-.content {
-    flex: 1;
-}
-
-/* Search Bar */
-#search input {
-    width: 100%;
-    padding: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-bottom: 2rem;
-    font-size: 1.1rem;
-    transition: border-color 0.3s ease;
-}
-
-#search input:focus {
-    border-color: #f9c74f;
 }
 
 /* Product Grid */
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 1.5rem;
 }
 
 .product-card {
-    background: linear-gradient(135deg, #ffffff, #ffe5d9);
+    background: #fff;
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
     text-align: center;
-    overflow: hidden;
-    position: relative;
 }
 
 .product-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
 .product-card img {
     width: 100%;
     border-radius: 8px;
-    margin-bottom: 1.5rem;
-    transition: transform 0.3s ease;
+    margin-bottom: 1rem;
 }
 
-.product-card:hover img {
-    transform: scale(1.05);
-}
-
-.product-link, .order-btn {
+.product-link {
     display: inline-block;
-    padding: 0.8rem 1.5rem;
-    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
+    background-color: #ff65a3;
     color: #fff;
-    background-color: #ff6f61;
-    border: none;
-    border-radius: 6px;
-    font-size: 1.1rem;
+    border-radius: 4px;
     text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s ease;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-.product-link:hover, .order-btn:hover {
-    background-color: #f9c74f;
+.product-link:hover {
+    background-color: #ff9a8b;
     transform: scale(1.1);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Portfolio Section */
-.portfolio {
-    margin-top: 3rem;
-}
-
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 1.5rem;
-}
-
-.portfolio-item {
-    background: linear-gradient(135deg, #d1f2eb, #a3e4d7); /* Cool gradient for portfolio */
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.portfolio-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-}
-
-.portfolio-item img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
-    transition: transform 0.3s ease;
-}
-
-.portfolio-item:hover img {
-    transform: scale(1.05);
-}
-
-/* Footer Styles */
+/* Footer */
 footer {
     text-align: center;
     padding: 2rem;
-    background: linear-gradient(45deg, #6a0572, #ab47bc); /* Vivid footer gradient */
+    background: linear-gradient(45deg, #ff65a3, #ff9a8b);
     color: #fff;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
-}
-
-footer a {
-    color: #ffdf85;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-footer a:hover {
-    color: #ff6f61;
 }
