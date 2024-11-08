@@ -1,7 +1,7 @@
 /* Global Styles */
 body {
     font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(to right, #ffecd2, #fcb69f);
+    background: linear-gradient(to right, #FFDEE9, #B5FFFC); /* Light pastel gradient */
     color: #333;
     margin: 0;
     padding: 0;
@@ -9,8 +9,8 @@ body {
 
 /* Header */
 .header {
-    background-color: #333;
-    color: #fff;
+    background-color: #4A4A4A; /* Elegant dark gray */
+    color: #FFFFFF;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,10 +23,11 @@ body {
 
 .header h1 {
     font-size: 2rem;
+    color: #FFD700; /* Gold accent for logo text */
 }
 
 .header nav a {
-    color: #fff;
+    color: #FFD700;
     text-decoration: none;
     margin: 0 1.2rem;
     font-weight: 600;
@@ -34,12 +35,12 @@ body {
 }
 
 .header nav a:hover {
-    color: #fcb69f;
+    color: #FF6F61; /* Soft coral color for hover */
 }
 
 /* Banner */
 .banner {
-    background-image: url('banner.jpg');
+    background-image: url('banner.jpg'); /* Ensure the image complements colors */
     background-size: cover;
     background-position: center;
     height: 60vh;
@@ -47,7 +48,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: #fff;
+    color: #FFFFFF;
     position: relative;
     overflow: hidden;
 }
@@ -59,41 +60,28 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Dark overlay for readability */
+    background: rgba(0, 0, 0, 0.3); /* Dark overlay for contrast */
 }
 
-.banner-content {
-    position: relative;
-    z-index: 1;
-}
-
-.banner h2 {
+.banner-content h2 {
     font-size: 3rem;
+    color: #FFD700;
     animation: slideIn 1s ease-out;
 }
 
-.banner p {
+.banner-content p {
     font-size: 1.2rem;
     margin-top: 0.5rem;
+    color: #FFDEE9;
     animation: fadeIn 1.5s ease-out;
-}
-
-@keyframes slideIn {
-    from { transform: translateY(50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
 }
 
 .cta-btn {
     display: inline-block;
     margin-top: 1rem;
     padding: 0.8rem 2rem;
-    background-color: #fcb69f;
-    color: #333;
+    background-color: #FF6F61;
+    color: #FFFFFF;
     font-weight: bold;
     border-radius: 25px;
     text-decoration: none;
@@ -101,13 +89,13 @@ body {
 }
 
 .cta-btn:hover {
-    background-color: #ffecd2;
+    background-color: #FFD700;
 }
 
 /* Sidebar */
 .sidebar {
     width: 220px;
-    background: #fff;
+    background: #FFFFFF;
     padding: 1.5rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
@@ -115,28 +103,22 @@ body {
 }
 
 .sidebar h3 {
-    color: #333;
+    color: #4A4A4A;
     font-size: 1.4rem;
-    margin-bottom: 1rem;
-}
-
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
 }
 
 .sidebar li a {
     display: block;
     padding: 0.8rem 1rem;
-    color: #333;
+    color: #4A4A4A;
     font-weight: 500;
     border-radius: 8px;
     transition: background-color 0.3s;
 }
 
 .sidebar li a:hover {
-    background-color: #fcb69f;
-    color: #fff;
+    background-color: #FF6F61;
+    color: #FFFFFF;
 }
 
 /* Content */
@@ -146,7 +128,7 @@ body {
 }
 
 h2 {
-    color: #333;
+    color: #4A4A4A;
     font-size: 2rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -160,7 +142,7 @@ h2 {
 }
 
 .product-card {
-    background: #fff;
+    background: #FFFFFF;
     border-radius: 12px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     padding: 1.5rem;
@@ -185,20 +167,20 @@ h2 {
 
 .product-card h3 {
     font-size: 1.2rem;
-    color: #333;
+    color: #4A4A4A;
 }
 
 .price {
     font-size: 1.1rem;
-    color: #fcb69f;
+    color: #FF6F61;
 }
 
 .product-link {
     display: inline-block;
     padding: 0.6rem 1.2rem;
     margin-top: 1rem;
-    background-color: #333;
-    color: #fff;
+    background-color: #4A4A4A;
+    color: #FFFFFF;
     border-radius: 20px;
     text-decoration: none;
     font-weight: 600;
@@ -206,15 +188,25 @@ h2 {
 }
 
 .product-link:hover {
-    background-color: #fcb69f;
-    color: #333;
+    background-color: #FFD700;
+    color: #4A4A4A;
 }
 
 /* Footer */
 footer {
     text-align: center;
     padding: 2rem;
-    background-color: #333;
-    color: #fff;
+    background-color: #4A4A4A;
+    color: #FFFFFF;
     margin-top: 3rem;
+}
+
+footer p a {
+    color: #FFD700;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer p a:hover {
+    color: #FF6F61;
 }
