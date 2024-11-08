@@ -1,35 +1,36 @@
-/* Reset and Base */
-* {
-    box-sizing: border-box;
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
     margin: 0;
     padding: 0;
 }
-body {
-    font-family: 'Montserrat', sans-serif;
-    color: #333;
-    background: linear-gradient(to right, #FFDEE9, #B5FFFC);
-}
 
-/* Header */
+/* Header Styles */
 .header {
-    background-color: #4A4A4A;
-    color: #FFD700;
+    background-color: #333;
+    color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
 }
+
+.header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
 .header nav a {
-    color: #FFD700;
+    color: #fff;
     text-decoration: none;
     margin: 0 1rem;
+    transition: color 0.3s;
 }
+
 .header nav a:hover {
-    color: #FF6F61;
+    color: #f39c12;
 }
 
 /* Hero Section with CSS Slider */
@@ -37,16 +38,22 @@ body {
     position: relative;
     overflow: hidden;
     height: 60vh;
-    margin-top: 5rem; /* Space for fixed header */
+    margin-top: 5rem;
+}
+
+.slider-wrapper {
+    display: flex;
+    width: 100%;
 }
 
 .slider {
     display: flex;
-    transition: transform 1s ease;
+    transition: transform 1s ease-in-out;
+    animation: slideAnimation 15s infinite;
 }
 
 .slide {
-    flex: 1;
+    flex: 0 0 100%;
     position: relative;
 }
 
@@ -75,63 +82,120 @@ body {
     font-size: 1.5rem;
 }
 
-/* Adding Animation for Auto Sliding */
+/* Slider Animation */
 @keyframes slideAnimation {
     0% {
         transform: translateX(0);
     }
+
     33% {
         transform: translateX(-100%);
     }
+
     66% {
         transform: translateX(-200%);
     }
+
     100% {
-        transform: translateX(0);
+        transform: translateX(-300%);
     }
 }
 
-.slider {
-    animation: slideAnimation 20s infinite;
+/* Main Container */
+.main-container {
+    display: flex;
+    margin: 2rem;
+    gap: 1.5rem;
 }
 
-/* Sidebar */
+/* Sidebar Styles */
 .sidebar {
-    width: 220px;
-    background-color: #FFFFFF;
-    padding: 1.5rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    width: 200px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
 }
-.sidebar ul li {
-    margin: 0.5rem 0;
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
 }
+
+.sidebar li a {
+    display: block;
+    padding: 0.5rem;
+    color: #333;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
 .sidebar li a:hover {
-    background-color: #FF6F61;
-    color: #FFF;
+    background-color: #f39c12;
+    color: #fff;
+    border-radius: 4px;
 }
 
 /* Content Section */
 .content {
     flex: 1;
-    padding: 2rem;
 }
 
 /* Product Grid */
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
 }
 
-/* Footer */
-footer {
-    background-color: #4A4A4A;
-    color: #FFF;
+.product-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     padding: 1.5rem;
+    transition: transform 0.3s ease;
     text-align: center;
-    margin-top: 2rem;
 }
-footer a:hover {
-    color: #FF6F61;
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.product-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.product-link:hover {
+    background-color: #f39c12;
+    transform: scale(1.05);
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    font-size: 1rem;
 }
