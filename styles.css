@@ -1,162 +1,216 @@
 /* Global Styles */
 body {
-    font-family: 'Roboto', sans-serif; /* Modern font */
-    background-color: #f4f4f4; /* Soft light gray background */
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #f4f4f4, #e0e0e0); /* Soft gradient background */
     color: #333;
     margin: 0;
     padding: 0;
+    line-height: 1.6;
 }
 
 /* Header Styles */
 .header {
-    background-color: #333; /* Dark background */
+    background-color: #222; /* Darker background for contrast */
     color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1.2rem 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .header h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin: 0;
+    letter-spacing: 2px;
 }
 
 .header nav a {
     color: #fff;
     text-decoration: none;
-    margin: 0 1rem;
-    transition: color 0.3s;
+    margin: 0 1.5rem;
+    font-size: 1.1rem;
+    transition: color 0.3s, transform 0.2s;
 }
 
 .header nav a:hover {
-    color: #f39c12; /* Hover color for links */
+    color: #f39c12; /* Warm yellow for hover */
+    transform: scale(1.1); /* Subtle grow effect */
 }
 
 /* Main Container */
 .main-container {
     display: flex;
     margin: 2rem;
-    gap: 1.5rem; /* Space between sidebar and content */
+    gap: 2rem; /* Increased gap for breathing space */
 }
 
 /* Sidebar Styles */
 .sidebar {
-    width: 200px; /* Fixed width for sidebar */
+    width: 240px; /* Wider sidebar */
     background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for sidebar */
-    padding: 1rem;
-    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.sidebar:hover {
+    transform: translateX(-10px); /* Sidebar slide-in effect */
 }
 
 .sidebar ul {
-    list-style-type: none; /* No bullets for list */
+    list-style-type: none;
     padding: 0;
 }
 
 .sidebar li a {
     display: block;
-    padding: 0.5rem;
-    color: #333; /* Dark text for links */
+    padding: 0.8rem;
+    color: #333;
+    font-size: 1rem;
     text-decoration: none;
-    transition: background 0.3s;
+    transition: background 0.3s, color 0.3s;
 }
 
 .sidebar li a:hover {
-    background-color: #f39c12; /* Highlight on hover */
-    color: #fff; /* White text on hover */
-    border-radius: 4px; /* Rounded corners on hover */
+    background-color: #f39c12;
+    color: #fff;
+    border-radius: 8px;
 }
 
 /* Content Section */
 .content {
-    flex: 1; /* Fill available space */
+    flex: 1;
 }
 
 /* Search Bar */
 #search input {
     width: 100%;
-    padding: 0.8rem; /* Padding for search input */
-    border: 1px solid #ddd; /* Light border */
-    border-radius: 4px; /* Rounded corners */
-    margin-bottom: 1.5rem; /* Space below search bar */
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    transition: border-color 0.3s ease;
+}
+
+#search input:focus {
+    border-color: #f39c12; /* Highlight search on focus */
 }
 
 /* Product Grid */
 .product-grid {
-    display: grid; /* Grid layout */
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive columns */
-    gap: 1rem; /* Space between cards */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
 }
 
 .product-card {
-    background-color: #fff; /* White background for cards */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    padding: 1.5rem; /* Padding for cards */
-    transition: transform 0.3s ease; /* Smooth transformation */
-    text-align: center; /* Center align text */
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
 }
 
 .product-card:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
+    transform: translateY(-10px); /* More pronounced lift effect */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
 }
 
 .product-card img {
-    width: 100%; /* Full-width images */
-    border-radius: 8px; /* Rounded corners for images */
-    margin-bottom: 1rem; /* Space below images */
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.05); /* Subtle zoom effect on image hover */
 }
 
 .product-link, .order-btn {
-    display: inline-block; /* Inline block for buttons */
-    padding: 0.5rem 1rem; /* Padding for buttons */
-    margin-top: 0.5rem; /* Space above buttons */
-    color: #fff; /* White text */
-    background-color: #333; /* Button background */
-    border: none; /* No border */
-    border-radius: 4px; /* Rounded corners for buttons */
-    text-decoration: none; /* No underline */
-    cursor: pointer; /* Pointer cursor */
-    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    margin-top: 1rem;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s ease;
 }
 
 .product-link:hover, .order-btn:hover {
-    background-color: #f39c12; /* Hover color for buttons */
-    transform: scale(1.05); /* Slightly enlarge on hover */
+    background-color: #f39c12;
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Portfolio Section */
 .portfolio {
-    margin-top: 2rem; /* Space above portfolio */
+    margin-top: 3rem;
 }
 
 .portfolio-grid {
-    display: grid; /* Grid layout for portfolio */
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive columns */
-    gap: 1rem; /* Space between portfolio items */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
 }
 
 .portfolio-item {
-    background-color: #fff; /* White background for portfolio items */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    padding: 1rem; /* Padding for portfolio items */
-    text-align: center; /* Center align text */
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
 .portfolio-item img {
-    width: 100%; /* Full-width images */
-    border-radius: 8px; /* Rounded corners for images */
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.05); /* Zoom effect for images */
 }
 
 /* Footer Styles */
 footer {
-    text-align: center; /* Center align footer text */
-    padding: 1rem; /* Padding for footer */
-    background-color: #333; /* Dark background */
-    color: #fff; /* White text */
-    position: relative; /* Ensure footer stays at bottom */
+    text-align: center;
+    padding: 2rem;
+    background-color: #222;
+    color: #fff;
+    position: relative;
     bottom: 0;
-    width: 100%; /* Full width */
+    width: 100%;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); /* Shadow at top of footer */
+}
+
+footer a {
+    color: #f39c12;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #fff;
 }
