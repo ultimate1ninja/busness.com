@@ -1,121 +1,216 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wearify - Clothing Store</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #fdfbfb, #ebedee); /* Light gradient background */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
 
-    
-    <header class="header">
-        <h1>Wearify</h1>
-        <nav>
-            <a href="business.html">Home</a>
-            <a href="#">About Us</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
+/* Header Styles */
+.header {
+    background: linear-gradient(45deg, #ff6f61, #d95e40); /* Gradient for header */
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 
-    <!-- Main Container: Sidebar + Content -->
-    <div class="main-container">
+.header h1 {
+    font-size: 2rem;
+    margin: 0;
+    letter-spacing: 1.5px;
+}
 
-        <!-- Sidebar Section -->
-        <aside class="sidebar">
-            <ul>
-                <li><a href="#">Men's Clothing</a></li>
-                <li><a href="#">Women's Clothing</a></li>
-                <li><a href="#">Accessories</a></li>
-            </ul>
-        </aside>
+.header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1.5rem;
+    font-size: 1.1rem;
+    transition: color 0.3s, transform 0.2s;
+}
 
-        <!-- Content Section -->
-        <section class="content">
-            
-            <!-- Search Bar -->
-            <div id="search">
-                <input type="text" id="searchInput" placeholder="Search for products..." onkeyup="searchProducts()">
-            </div>
+.header nav a:hover {
+    color: #ffdf85; /* Golden yellow on hover */
+    transform: scale(1.1);
+}
 
-            <!-- Product Grid -->
-            <div class="product-grid" id="productGrid">
-                <div class="product-card">
-                    <img src="tshirt.jpg" alt="T-shirt">
-                    <h2 class="product-title">T-shirt</h2>
-                    <p>$20</p>
-                    <a href="#" class="product-link">View Details</a>
-                    <button class="order-btn" onclick="orderNow('T-shirt', '20', 'tshirt.jpg')">Order Now</button>
-                </div>
+/* Main Container */
+.main-container {
+    display: flex;
+    margin: 2rem;
+    gap: 2rem;
+}
 
-                <div class="product-card">
-                    <img src="jeans.jpg" alt="Jeans">
-                    <h2 class="product-title">Jeans</h2>
-                    <p>$40</p>
-                    <a href="#" class="product-link">View Details</a>
-                    <button class="order-btn" onclick="orderNow('Jeans', '40', 'jeans.jpg')">Order Now</button>
-                </div>
+/* Sidebar Styles */
+.sidebar {
+    width: 240px;
+    background: linear-gradient(135deg, #ffdf85, #f9c74f); /* Warm gradient */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
 
-                <div class="product-card">
-                    <img src="jacket.jpg" alt="Jacket">
-                    <h2 class="product-title">Jacket</h2>
-                    <p>$60</p>
-                    <a href="#" class="product-link">View Details</a>
-                    <button class="order-btn" onclick="orderNow('Jacket', '60', 'jacket.jpg')">Order Now</button>
-                </div>
-            </div>
+.sidebar:hover {
+    transform: translateX(-8px); /* Slide-in effect */
+}
 
-            <!-- Portfolio Section -->
-            <div class="portfolio">
-                <h2>Our Portfolio</h2>
-                <div class="portfolio-grid">
-                    <div class="portfolio-item">
-                        <img src="portfolio1.jpg" alt="Portfolio Item 1">
-                        <h3>Fashion Design 1</h3>
-                    </div>
-                    <div class="portfolio-item">
-                        <img src="portfolio2.jpg" alt="Portfolio Item 2">
-                        <h3>Fashion Design 2</h3>
-                    </div>
-                    <div class="portfolio-item">
-                        <img src="portfolio3.jpg" alt="Portfolio Item 3">
-                        <h3>Fashion Design 3</h3>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Wearify - All Rights Reserved</p>
-    </footer>
+.sidebar li a {
+    display: block;
+    padding: 0.8rem;
+    color: #4d3319; /* Dark text */
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+}
 
-    <script>
-    function orderNow(productName, productPrice, productImage) {
-        const phoneNumber = "923202102132"; // Replace with your WhatsApp number
-        const message = `Order details:\nProduct: ${productName}\nPrice: $${productPrice}\nImage: ${productImage}`;
-        const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-        
-        window.open(whatsappLink, '_blank');
-    }
+.sidebar li a:hover {
+    background-color: #ff6f61;
+    color: #fff;
+    border-radius: 8px;
+}
 
-    function searchProducts() {
-        const input = document.getElementById('searchInput');
-        const filter = input.value.toLowerCase();
-        const productGrid = document.getElementById('productGrid');
-        const productCards = productGrid.getElementsByClassName('product-card');
+/* Content Section */
+.content {
+    flex: 1;
+}
 
-        for (let i = 0; i < productCards.length; i++) {
-            const title = productCards[i].getElementsByClassName('product-title')[0].textContent.toLowerCase();
-            if (title.includes(filter)) {
-                productCards[i].style.display = ""; // Show
-            } else {
-                productCards[i].style.display = "none"; // Hide
-            }
-        }
-    }
-    </script>
+/* Search Bar */
+#search input {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    transition: border-color 0.3s ease;
+}
 
-</body>
-</html>
+#search input:focus {
+    border-color: #f9c74f;
+}
+
+/* Product Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.product-card {
+    background: linear-gradient(135deg, #ffffff, #ffe5d9);
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+.product-link, .order-btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    margin-top: 1rem;
+    color: #fff;
+    background-color: #ff6f61;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s ease;
+}
+
+.product-link:hover, .order-btn:hover {
+    background-color: #f9c74f;
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Portfolio Section */
+.portfolio {
+    margin-top: 3rem;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.portfolio-item {
+    background: linear-gradient(135deg, #d1f2eb, #a3e4d7); /* Cool gradient for portfolio */
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-item img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(45deg, #6a0572, #ab47bc); /* Vivid footer gradient */
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer a {
+    color: #ffdf85;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ff6f61;
+}
