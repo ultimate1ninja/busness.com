@@ -29,8 +29,8 @@ body {
 /* Hero Section */
 .hero {
     position: relative;
-    height: 150px; /* Set a smaller height (adjust as needed) */
-    width: 100%;  /* Hero section takes up full width */
+    height: 300px; /* Larger height for hero section */
+    width: 100%;
     background-image: url('wearify.jpg'); /* Path to your hero image */
     background-size: cover; /* Ensures the image covers the full area */
     background-position: center; /* Keeps the image centered */
@@ -38,6 +38,12 @@ body {
     align-items: center;
     justify-content: center;
     color: #fff; /* Text color */
+    transition: height 0.5s ease-in-out; /* Smooth transition */
+}
+
+/* Hero Image (Small Initially) */
+.hero.shrink {
+    height: 150px; /* Start with a smaller height */
 }
 
 /* Caption */
