@@ -28,7 +28,7 @@ body {
 .hero {
     position: relative;
     height: 400px; /* Adjust the height as needed */
-    background-image: url('your-hero-image.jpg'); /* Replace with your image path */
+    background-image: url('wearify.jpg'); /* Replace with your image path */
     background-size: cover;
     background-position: center;
     display: flex;
