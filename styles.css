@@ -27,35 +27,15 @@ body {
 /* Hero Section */
 .hero {
     position: relative;
-    height: 60px;
-    background: linear-gradient(to right, #add8e6, #06402b);
+    height: 400px; /* Adjust the height as needed */
+    background-image: url('your-hero-image.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.slider-wrapper {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-.slider {
-    display: flex;
-    animation: slide 9s infinite;
-}
-.slide {
-    flex: 0 0 100%;
-    position: relative;
-    text-align: center;
-}
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 .caption {
-    position: absolute;
-    bottom: 15%;
-    left: 10%;
     color: #333;
     background: rgba(255, 255, 255, 0.8);
     padding: 1rem;
@@ -115,12 +95,4 @@ footer {
     padding: 1rem;
     background: #333;
     color: #fff;
-}
-
-/* Slider Animation */
-@keyframes slide {
-    0% { transform: translateX(0); }
-    33% { transform: translateX(-100%); }
-    66% { transform: translateX(-200%); }
-    100% { transform: translateX(0); }
 }
