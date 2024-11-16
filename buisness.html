@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <!-- Header -->
     <header class="header">
         <h1>Fashion Hub</h1>
         <nav>
@@ -19,7 +20,18 @@
         </nav>
     </header>
 
-    <section class="banner">
+    <!-- Hero Section -->
+    <section class="hero">
+        <aside class="sidebar">
+            <h3>Shop Categories</h3>
+            <ul>
+                <li><a href="#new-arrivals">New Arrivals</a></li>
+                <li><a href="#men">Men</a></li>
+                <li><a href="#women">Women</a></li>
+                <li><a href="#accessories">Accessories</a></li>
+                <li><a href="#sale">Sale</a></li>
+            </ul>
+        </aside>
         <div class="slider-wrapper">
             <div class="slider">
                 <div class="slide active">
@@ -47,41 +59,60 @@
         </div>
     </section>
 
-    <div class="main-container">
-        <aside class="sidebar">
-            <h3>Categories</h3>
-            <ul>
-                <li><a href="#new-arrivals">New Arrivals</a></li>
-                <li><a href="#men">Men</a></li>
-                <li><a href="#women">Women</a></li>
-                <li><a href="#accessories">Accessories</a></li>
-                <li><a href="#sale">Sale</a></li>
-            </ul>
-        </aside>
-
-        <section class="content">
-            <h2>Featured Products</h2>
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Section 1: Bestsellers -->
+        <section class="bestsellers">
+            <h2>Bestsellers</h2>
             <div class="product-grid">
                 <div class="product-card">
-                    <img src="product1.jpg" alt="Product Image">
+                    <img src="product1.jpg" alt="Product 1">
                     <h3>Stylish Jacket</h3>
-                    <p class="price">$79.99</p>
-                    <a href="#" class="product-link">View Details</a>
+                    <p>$79.99</p>
                 </div>
                 <div class="product-card">
-                    <img src="product2.jpg" alt="Product Image">
+                    <img src="product2.jpg" alt="Product 2">
                     <h3>Casual Shoes</h3>
-                    <p class="price">$49.99</p>
-                    <a href="#" class="product-link">View Details</a>
+                    <p>$49.99</p>
                 </div>
+                <div class="product-card">
+                    <img src="product3.jpg" alt="Product 3">
+                    <h3>Summer Dress</h3>
+                    <p>$59.99</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Customer Reviews -->
+        <section class="reviews">
+            <h2>What Our Customers Say</h2>
+            <div class="review-grid">
+                <div class="review-card">
+                    <p>"Absolutely love this store! Their clothing fits perfectly."</p>
+                    <span>– Sarah K.</span>
+                </div>
+                <div class="review-card">
+                    <p>"High-quality materials and fast delivery. 10/10!"</p>
+                    <span>– John D.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Lookbook Gallery -->
+        <section class="lookbook">
+            <h2>Lookbook</h2>
+            <div class="gallery-grid">
+                <img src="look1.jpg" alt="Look 1">
+                <img src="look2.jpg" alt="Look 2">
+                <img src="look3.jpg" alt="Look 3">
             </div>
         </section>
     </div>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Fashion Hub. All Rights Reserved. <a href="#privacy-policy">Privacy Policy</a></p>
     </footer>
-
 </body>
 
 </html>
