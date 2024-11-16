@@ -27,7 +27,7 @@ body {
 /* Hero Section */
 .hero {
     position: relative;
-    height: 60vh;
+    height: 60px;
     background: linear-gradient(to right, #add8e6, #06402b);
     display: flex;
     align-items: center;
