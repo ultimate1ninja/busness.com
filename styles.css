@@ -8,7 +8,7 @@ body {
 
 /* Header */
 .header {
-    background: linear-gradient(to right, #add8e6, #06402b); /* Light green to light blue */
+    background-color:black;
     padding: 1.5rem;
     text-align: center;
     color: #fff;
