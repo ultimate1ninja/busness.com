@@ -1,25 +1,63 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shirt Store</title>
+    <title>Wearify - Stylish Shirts</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to fashion hub</h1>
+    <!-- Header -->
+    <header class="header">
+        <h1>Wearify</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
+
+    <!-- Hero Section -->
     <section class="hero">
-        <div class="shirt-container">
-            <img src="shirt1.png" alt="Shirt 1" class="shirt shirt1">
-            <img src="shirt2.png" alt="Shirt 2" class="shirt shirt2">
-        </div>
-        <div class="order-info">
-            <p class="price">$29.99</p>
-            <button class="order-btn">Order Now</button>
+        <div class="caption">
+            <h2>Elevate Your Style</h2>
+            <p>Discover the finest shirts tailored just for you.</p>
         </div>
     </section>
+
+    <!-- Main Content -->
+    <section class="main-content">
+        <h2>Our Collection</h2>
+        <div class="product-grid">
+            <!-- Product Card 1 -->
+            <div class="product-card">
+                <img src="shirt1.jpg" alt="Stylish Shirt 1">
+                <h3>Classic Blue Shirt</h3>
+                <p>$29.99</p>
+                <a href="#" class="button">Order Now</a>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="product-card">
+                <img src="shirt2.jpg" alt="Stylish Shirt 2">
+                <h3>Elegant White Shirt</h3>
+                <p>$34.99</p>
+                <a href="#" class="button">Order Now</a>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="product-card">
+                <img src="shirt3.jpg" alt="Stylish Shirt 3">
+                <h3>Bold Red Shirt</h3>
+                <p>$39.99</p>
+                <a href="#" class="button">Order Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Wearify. All rights reserved.</p>
+    </footer>
 </body>
 </html>
