@@ -56,6 +56,11 @@ body {
 
 /* Main Content */
 .main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh; /* Adjust height as needed */
     text-align: center;
     margin: 3rem auto;
     background: #fff;
@@ -65,13 +70,7 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.product-grid {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 1.5rem;
-}
-
+/* Product Card Styling */
 .product-card {
     background: #f5f5f5;
     padding: 1.5rem;
@@ -94,6 +93,22 @@ body {
     margin-bottom: 1rem;
 }
 
+/* Image Container (side-by-side images) */
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Space between images */
+    margin-bottom: 1rem; /* Space below images */
+}
+
+.image-container img {
+    width: 120px; /* Adjust size as needed */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Order Button */
 .button {
     display: inline-block;
     margin-top: 1rem;
