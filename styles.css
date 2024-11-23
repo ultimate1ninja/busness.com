@@ -8,7 +8,7 @@ body {
 
 /* Header */
 .header {
-    background: linear-gradient(to right, silver, gold); /* Light green to light blue */
+    background: linear-gradient(to right, #add8e6, #06402b); /* Light green to light blue */
     padding: 1.5rem;
     text-align: center;
     color: #fff;
@@ -138,32 +138,17 @@ body {
     z-index: 1000;
 }
 
-.modal-toggle:checked + .modal {
-    display: flex;
-}
-
 .modal-content {
-    display: flex;
-    gap: 2rem;
     background: #fff;
     padding: 2rem;
     border-radius: 10px;
+    text-align: center;
 }
 
 .modal-content img {
     width: 300px;
     height: auto;
     border-radius: 8px;
-}
-
-.modal-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: -1;
 }
 
 .close-modal {
