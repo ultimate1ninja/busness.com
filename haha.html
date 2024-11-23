@@ -34,28 +34,6 @@
         <p>&copy; 2024 Fashion Hub. All Rights Reserved.</p>
     </footer>
 
-    <script>
-        // Extract URL parameters
-        const params = new URLSearchParams(window.location.search);
-        const productName = params.get('name');
-        const productPrice = params.get('price');
-
-        // Populate page with product details
-        if (productName && productPrice) {
-            document.getElementById('product-name').textContent = productName;
-            document.getElementById('product-price').textContent = `$${productPrice}`;
-            
-            // Customize WhatsApp link
-            const whatsappNumber = "1234567890"; // Replace with your WhatsApp number
-            const whatsappMessage = `I am interested in the ${productName} priced at $${productPrice}. Please share more details!`;
-            const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-
-            // Update the Order Now button
-            document.getElementById('order-button').href = whatsappLink;
-        } else {
-            document.querySelector('main').innerHTML = '<p>Product details are missing!</p>';
-        }
-    </script>
-</body>
+  </body>
 
 </html>
