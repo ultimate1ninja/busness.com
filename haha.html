@@ -29,15 +29,34 @@
     <section class="main-content">
         <h2>Featured Shirt</h2>
         <div class="product-card">
+            <!-- Hidden checkbox to toggle the modal -->
+            <input type="checkbox" id="shirtModal" class="modal-toggle">
+            
+            <!-- Thumbnail images -->
             <div class="image-container">
-                <img src="por.jpg" alt="Shirt Front View">
-                <img src="nott.jpg" alt="Shirt Back View">
+                <label for="shirtModal">
+                    <img src="shirt-front.jpg" alt="Shirt Front View">
+                </label>
+                <label for="shirtModal">
+                    <img src="shirt-back.jpg" alt="Shirt Back View">
+                </label>
             </div>
+            
             <h3>Classic Blue Shirt</h3>
             <p>$29.99</p>
             <a href="#" class="button">Order Now</a>
         </div>
     </section>
+
+    <!-- Modal for full-size images -->
+    <div class="modal">
+        <label for="shirtModal" class="modal-overlay"></label>
+        <div class="modal-content">
+            <img src="por.jpg" alt="Shirt Front Full View">
+            <img src="nott.jpg" alt="Shirt Back Full View">
+            <label for="shirtModal" class="close-modal">Close</label>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
