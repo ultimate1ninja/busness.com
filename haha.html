@@ -7,6 +7,24 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Header -->
+    <header class="header">
+        <h1>Wearify</h1>
+        <nav>
+            <a href="buisness.html">Home</a>
+            <a href="#products">Products</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="caption">
+            <h2>Elevate Your Style</h2>
+            <p>Discover the finest shirts tailored just for you.</p>
+        </div>
+    </section>
+
     <!-- Featured Shirt Card -->
     <section class="main-content">
         <h2>Featured Shirt</h2>
@@ -18,6 +36,11 @@
         </div>
     </section>
 
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Wearify. All rights reserved.</p>
+    </footer>
+
     <!-- JavaScript -->
     <script>
         document.querySelector('#orderBtn').addEventListener('click', function(event) {
@@ -27,16 +50,16 @@
             const productName = document.querySelector('.product-card h3').innerText;
             const price = document.querySelector('.product-card p').innerText;
 
-            // WhatsApp Group ID
-            const groupID = "HqcvFUF6jU47NhpAvXbYcG";
+            // WhatsApp Number (replace with your number)
+            const whatsappNumber = "92300 2721974";
 
             // Message
             const message = `Hello, I am interested in ordering the ${productName} for ${price}. Please assist me!`;
 
-            // WhatsApp Group URL
-            const whatsappURL = `https://wa.me/${groupID}?text=${encodeURIComponent(message)}`;
+            // WhatsApp URL
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
-            // Open WhatsApp Group Chat
+            // Open WhatsApp Chat
             window.open(whatsappURL, '_blank');
         });
     </script>
