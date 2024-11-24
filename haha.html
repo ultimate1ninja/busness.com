@@ -30,28 +30,43 @@
         <h2>Featured Shirt</h2>
         <div class="product-card">
             <div class="image-container">
-                <img src="por.jpg" alt="Shirt Front View" class="shirt-image" data-fullsize="por.jpg">
-                <img src="nott.jpg" alt="Shirt Back View" class="shirt-image" data-fullsize="nott.jpg">
+                <img src="por.jpg" alt="Shirt Front View" class="shirt-image">
+                <img src="nott.jpg" alt="Shirt Back View" class="shirt-image">
             </div>
             <h3>Classic Blue Shirt</h3>
             <p>$29.99</p>
-            <a href="#" class="button">Order Now</a>
+            <!-- Order Now Button -->
+            <a href="#" class="button" id="orderBtn">Order Now</a>
         </div>
     </section>
-
-    <!-- Modal for Full-Size Images -->
-    <div class="modal" id="imageModal">
-        <div class="modal-content">
-            <img src="" alt="Full-size Shirt Image" id="modalImage">
-            <button id="closeModal" class="close-modal">Close</button>
-        </div>
-    </div>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 Wearify. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- JavaScript -->
+    <script>
+        // JavaScript to send product info via WhatsApp
+        document.querySelector('#orderBtn').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default link behavior
+
+            // Get product details
+            const productName = document.querySelector('.product-card h3').innerText;
+            const price = document.querySelector('.product-card p').innerText;
+
+            // Your WhatsApp number (replace with your actual number)
+            const whatsappNumber = "923001234567";
+
+            // Message to send
+            const message = `Hello, I am interested in ordering the ${productName} for ${price}. Please assist me!`;
+
+            // Create WhatsApp link
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+            // Open WhatsApp in a new tab
+            window.open(whatsappURL, '_blank');
+        });
+    </script>
 </body>
 </html>
