@@ -7,32 +7,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <h1>Wearify</h1>
-        <nav>
-            <a href="buisness.html">Home</a>
-            <a href="#products">Products</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="caption">
-            <h2>Elevate Your Style</h2>
-            <p>Discover the finest shirts tailored just for you.</p>
-        </div>
-    </section>
-
     <!-- Featured Shirt Card -->
     <section class="main-content">
         <h2>Featured Shirt</h2>
         <div class="product-card">
-            <div class="image-container">
-                <img src="por.jpg" alt="Shirt Front View" class="shirt-image">
-                <img src="nott.jpg" alt="Shirt Back View" class="shirt-image">
-            </div>
             <h3>Classic Blue Shirt</h3>
             <p>$29.99</p>
             <!-- Order Now Button -->
@@ -40,31 +18,25 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Wearify. All rights reserved.</p>
-    </footer>
-
     <!-- JavaScript -->
     <script>
-        // JavaScript to send product info via WhatsApp
         document.querySelector('#orderBtn').addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent default link behavior
+            event.preventDefault();
 
-            // Get product details
+            // Product Details
             const productName = document.querySelector('.product-card h3').innerText;
             const price = document.querySelector('.product-card p').innerText;
 
-            // Your WhatsApp number (replace with your actual number)
-            const whatsappNumber = "923360806932";
+            // WhatsApp Group ID
+            const groupID = "HqcvFUF6jU47NhpAvXbYcG";
 
-            // Message to send
+            // Message
             const message = `Hello, I am interested in ordering the ${productName} for ${price}. Please assist me!`;
 
-            // Create WhatsApp link
-            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+            // WhatsApp Group URL
+            const whatsappURL = `https://wa.me/${groupID}?text=${encodeURIComponent(message)}`;
 
-            // Open WhatsApp in a new tab
+            // Open WhatsApp Group Chat
             window.open(whatsappURL, '_blank');
         });
     </script>
