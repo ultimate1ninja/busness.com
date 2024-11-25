@@ -15,19 +15,23 @@
             max-width: 300px;
             margin: auto;
         }
-        .image-container {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 16px;
-        }
-        .image-container img {
-            width: 45%;
-            cursor: pointer;
-            transition: transform 0.2s ease;
-        }
-        .image-container img:hover {
-            transform: scale(1.1);
-        }
+.image-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 16px;
+}
+
+.image-container img {
+    width: 45%; /* Make both images the same width */
+    aspect-ratio: 1/1; /* Ensures a square ratio */
+    object-fit: cover; /* Ensures the image fits within the dimensions */
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.image-container img:hover {
+    transform: scale(1.1);
+}
 
         /* Modal Styles */
         .modal {
