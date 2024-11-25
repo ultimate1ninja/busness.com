@@ -6,32 +6,97 @@
     <title>Wearify - Stylish Shirts</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Styles for the product card */
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header nav a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        header nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background: #f5f5f5;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            color: #555;
+        }
+
+        .main-content {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .main-content h2 {
+            margin-bottom: 20px;
+        }
+
+        /* Product Card Styles */
         .product-card {
             border: 1px solid #ddd;
             border-radius: 8px;
             padding: 16px;
-            text-align: center;
-            max-width: 300px;
+            max-width: 350px;
             margin: auto;
+            text-align: center;
         }
-.image-container {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 16px;
-}
 
-.image-container img {
-    width: 45%; /* Make both images the same width */
-    aspect-ratio: 1/1; /* Ensures a square ratio */
-    object-fit: cover; /* Ensures the image fits within the dimensions */
-    cursor: pointer;
-    transition: transform 0.2s ease;
-}
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 16px;
+        }
 
-.image-container img:hover {
-    transform: scale(1.1);
-}
+        .image-container img {
+            width: 45%; /* Ensure both images take the same width */
+            aspect-ratio: 1/1; /* Uniform square shape */
+            object-fit: cover; /* Ensure the image fills its container without distortion */
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.1);
+        }
+
+        .button {
+            display: inline-block;
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .button:hover {
+            background: #555;
+        }
 
         /* Modal Styles */
         .modal {
@@ -46,15 +111,18 @@
             justify-content: center;
             align-items: center;
         }
+
         .modal-content {
             position: relative;
             max-width: 90%;
             max-height: 90%;
         }
+
         .modal-content img {
             width: 100%;
             border-radius: 8px;
         }
+
         .close-modal {
             position: absolute;
             top: 10px;
@@ -64,6 +132,14 @@
             font-size: 20px;
             cursor: pointer;
             border-radius: 50%;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #333;
+            color: #fff;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -91,8 +167,8 @@
         <h2>Featured Shirt</h2>
         <div class="product-card">
             <div class="image-container">
-                <img src="por.jpg" alt="Shirt Front View" class="shirt-image" data-fullsize="por.jpg">
-                <img src="nott.jpg" alt="Shirt Back View" class="shirt-image" data-fullsize="nott.jpg">
+                <img src="front.jpg" alt="Shirt Front View" class="shirt-image" data-fullsize="front.jpg">
+                <img src="back.jpg" alt="Shirt Back View" class="shirt-image" data-fullsize="back.jpg">
             </div>
             <h3>Classic Blue Shirt</h3>
             <p>$29.99</p>
@@ -124,7 +200,7 @@
             const productName = document.querySelector('.product-card h3').innerText;
             const price = document.querySelector('.product-card p').innerText;
 
-            // WhatsApp Number (replace with your number)
+            // WhatsApp Number
             const whatsappNumber = "923002721974";
 
             // Message
