@@ -5,6 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wearify - Stylish Shirts</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Styles for the product card */
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+            max-width: 300px;
+            margin: auto;
+        }
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 16px;
+        }
+        .image-container img {
+            width: 45%;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .image-container img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .modal-content img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #fff;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -29,12 +86,24 @@
     <section class="main-content">
         <h2>Featured Shirt</h2>
         <div class="product-card">
+            <div class="image-container">
+                <img src="front.jpg" alt="Shirt Front View" class="shirt-image" data-fullsize="front.jpg">
+                <img src="back.jpg" alt="Shirt Back View" class="shirt-image" data-fullsize="back.jpg">
+            </div>
             <h3>Classic Blue Shirt</h3>
             <p>$29.99</p>
             <!-- Order Now Button -->
             <a href="#" class="button" id="orderBtn">Order Now</a>
         </div>
     </section>
+
+    <!-- Modal for Full-Size Images -->
+    <div class="modal" id="imageModal">
+        <div class="modal-content">
+            <img src="" alt="Zoomed Shirt Image" id="modalImage">
+            <button id="closeModal" class="close-modal">&times;</button>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -43,6 +112,7 @@
 
     <!-- JavaScript -->
     <script>
+        // Order Now Button
         document.querySelector('#orderBtn').addEventListener('click', function(event) {
             event.preventDefault();
 
@@ -51,7 +121,7 @@
             const price = document.querySelector('.product-card p').innerText;
 
             // WhatsApp Number (replace with your number)
-            const whatsappNumber = "92300 2721974";
+            const whatsappNumber = "923002721974";
 
             // Message
             const message = `Hello, I am interested in ordering the ${productName} for ${price}. Please assist me!`;
@@ -61,6 +131,29 @@
 
             // Open WhatsApp Chat
             window.open(whatsappURL, '_blank');
+        });
+
+        // Zoom Image Modal
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const shirtImages = document.querySelectorAll('.shirt-image');
+        const closeModal = document.getElementById('closeModal');
+
+        shirtImages.forEach(img => {
+            img.addEventListener('click', function () {
+                modalImage.src = this.dataset.fullsize;
+                modal.style.display = 'flex';
+            });
+        });
+
+        closeModal.addEventListener('click', function () {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', function (event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
         });
     </script>
 </body>
