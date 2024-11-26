@@ -1,1 +1,209 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wearify - Stylish Shirts</title>
+        <link rel="stylesheet" href="styles.css"> 
+       <style>
+        /* Global Styles */
+
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+
+        .product-card {
+            text-align: center;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .image-container img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.1);
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #218838;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #fff;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1>Wearify</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="caption">
+            <h2>Elevate Your Style</h2>
+            <p>Discover the finest shirts tailored just for you.</p>
+        </div>
+    </section>
+
+    <!-- Featured Shirt Card -->
+    <section class="main-content" id="products">
+        <h2>Featured Shirt</h2>
+        <div class="product-card">
+            <div class="image-container">
+                <img src="hehe.jpg" alt="Shirt Back View" class="shirt-image" data-fullsize="hehe.jpg">
+            </div>
+            <h3> white-Batman logo Shirt</h3>
+            <p>$29.99</p>
+            <a href="#" class="button" id="orderBtn">Order Now</a>
+        </div>
+    </section>
+
+    <!-- Modal for Full-Size Images -->
+    <div class="modal" id="imageModal">
+        <div class="modal-content">
+            <img src="" alt="Full-size Shirt Image" id="modalImage">
+            <button id="closeModal" class="close-modal">&times;</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Wearify. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Zoom Image Modal
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const shirtImages = document.querySelectorAll('.shirt-image');
+        const closeModal = document.getElementById('closeModal');
+
+        shirtImages.forEach(img => {
+            img.addEventListener('click', function () {
+                modalImage.src = this.dataset.fullsize;
+                modal.style.display = 'flex';
+            });
+        });
+
+        closeModal.addEventListener('click', function () {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', function (event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Order Now Button
+        document.querySelector('#orderBtn').addEventListener('click', function(event) {
+            event.preventDefault();
+
+            // Product Details
+            const productName = document.querySelector('.product-card h3').innerText;
+            const price = document.querySelector('.product-card p').innerText;
+
+            // WhatsApp Number (replace with your number)
+            const whatsappNumber = "923002721974";
+
+            // Message
+            const message = `Hello, I am interested in ordering the ${productName} for ${price}. Please assist me!`;
+
+            // WhatsApp URL
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+            // Open WhatsApp Chat
+            window.open(whatsappURL, '_blank');
+        });
+    </script>
+</body>
+</html>
