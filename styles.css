@@ -32,7 +32,7 @@ body {
     position: relative;
     height: 300px; /* Larger height for hero section */
     width: 100%;
-    background-image: url('your_image_url_here');
+    background-image: url('download.jpg');
 
     background-size: cover; /* Ensures the image covers the full area */
     background-position: center; /* Keeps the image centered */
