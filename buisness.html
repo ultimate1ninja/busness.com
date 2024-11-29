@@ -1,20 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fashion Hub - T-Shirts</title>
+    <title>Wearify - Stylish Shirts</title>
     <link rel="stylesheet" href="styles.css">
-</head>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
 
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+
+        /* Product Card Container */
+        .product-card-container {
+            display: flex;
+            justify-content: center; /* Center the cards horizontally */
+            align-items: center; /* Center the cards vertically */
+            flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+            gap: 20px; /* Add spacing between cards */
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        /* Individual Product Card */
+        .product-card {
+            flex: 1 1 300px; /* Make cards responsive */
+            max-width: 300px;
+            text-align: center;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .image-container img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.1);
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #218838;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            margin-top: 20px;
+        }
+    </style>
+</head>
 <body>
     <!-- Header -->
     <header class="header">
-        <h1>Fashion Hub</h1>
+        <h1>Wearify</h1>
         <nav>
             <a href="#home">Home</a>
-            <a href="#tshirts">T-Shirts</a>
+            <a href="#products">Products</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
@@ -22,41 +105,74 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="caption">
-            <h2>Stylish T-Shirts</h2>
-            <p>Upgrade your wardrobe with trendy designs.</p>
+            <h2>Elevate Your Style</h2>
+            <p>Discover the finest shirts tailored just for you.</p>
         </div>
     </section>
 
-    <!-- Main Content -->
+    <!-- Product Card Section -->
+    <section class="main-content">
+        <h2>Featured Shirts</h2>
+        <div class="product-card-container">
+            <!-- Product Card 1 -->
+            <div class="product-card">
+                <div class="image-container">
+                    <img src="por.jpg" alt="Shirt Front View" class="shirt-image" data-fullsize="por.jpg">
+                    <img src="nott.jpg" alt="Shirt Back View" class="shirt-image" data-fullsize="nott.jpg">
+                </div>
+                <h3>Porsche Shirt</h3>
+                <p>$29.99</p>
+                <a href="#" class="button" id="orderBtn1">Order Now</a>
+            </div>
 
-        <h2>Explore Our T-Shirts</h2>
-        <div class="product-grid">
+            <!-- Product Card 2 -->
             <div class="product-card">
-                <img src="dr.jpg" alt="T-Shirt">
-                <h3>Classic White Tee</h3>
-                <p class="price">$19.99</p>
-                <a href="hha.html" class="button">View Details</a>
-            </div>
-            <hr>
-            <div class="product-card">
-                <img src="por.jpg" alt="T-Shirt">
-                <h3>porsche t-shirt</h3>
-                <p class="price">$24.99</p>
-                <a href="haha.html" class="button">View Details</a>
-            </div>
-           <hr>
-            <div class="product-card">
-                <img src="hehe.jpg" alt="T-Shirt">
-                <h3>V-Neck T-Shirt</h3>
-                <p class="price">$22.99</p>
-                <a href="why.html" class="button">View Details</a>
+                <div class="image-container">
+                    <img src="shirt2-front.jpg" alt="Shirt Front View" class="shirt-image" data-fullsize="shirt2-front.jpg">
+                    <img src="shirt2-back.jpg" alt="Shirt Back View" class="shirt-image" data-fullsize="shirt2-back.jpg">
+                </div>
+                <h3>Classic White Shirt</h3>
+                <p>$19.99</p>
+                <a href="#" class="button" id="orderBtn2">Order Now</a>
             </div>
         </div>
+    </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Fashion Hub. All Rights Reserved.</p>
+        <p>&copy; 2024 Wearify. All rights reserved.</p>
     </footer>
-</body>
 
+    <!-- JavaScript -->
+    <script>
+        // Zoom Image Modal
+        const shirtImages = document.querySelectorAll('.shirt-image');
+        shirtImages.forEach(img => {
+            img.addEventListener('click', function () {
+                alert(`Viewing: ${this.alt}`);
+            });
+        });
+
+        // Order Now Button
+        document.querySelectorAll('.button').forEach(button => {
+            button.addEventListener('click', function (event) {
+                event.preventDefault();
+
+                // Get product name and price
+                const productName = this.parentElement.querySelector('h3').innerText;
+                const price = this.parentElement.querySelector('p').innerText;
+
+                // WhatsApp Number
+                const whatsappNumber = "923002721974";
+
+                // WhatsApp URL
+                const message = `Hello, I am interested in ordering the ${productName} for ${price}. Please assist me!`;
+                const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+                // Open WhatsApp Chat
+                window.open(whatsappURL, '_blank');
+            });
+        });
+    </script>
+</body>
 </html>
