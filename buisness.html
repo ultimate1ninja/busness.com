@@ -22,7 +22,7 @@
         .product-card-container {
             display: flex;
             justify-content: center; /* Center the cards horizontally */
-            align-items: center; /* Center the cards vertically */
+            align-items: flex-start; /* Align cards to the top */
             gap: 20px; /* Add spacing between cards */
             margin: 20px auto;
             padding: 20px;
@@ -36,7 +36,7 @@
             border-radius: 8px;
             padding: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 300px; /* Set a fixed width for the cards */
+            width: 300px; /* Fixed width for the cards */
             flex: 0 1 auto; /* Allow flexibility */
         }
 
@@ -160,7 +160,7 @@
         <!-- Second Product Card -->
         <div class="product-card">
             <div class="image-container">
-                <img src="dr.jpg" alt="Shirt Front View" class="shirt-image" data-fullsize="dr.jpg"
+                <img src="dr.jpg" alt="Shirt Front View" class="shirt-image" data-fullsize="dr.jpg">
             </div>
             <h3>Luxury Shirt</h3>
             <p>$39.99</p>
