@@ -194,24 +194,25 @@
 
     <!-- JavaScript -->
     <script>
-        // WhatsApp Order Logic
-        const whatsappNumber = "923002721974"; // Replace with your WhatsApp number
+// WhatsApp Order Logic
+const whatsappNumber = "923002721974"; // Replace with your WhatsApp number
 
-        document.querySelectorAll('.button').forEach(button => {
-            button.addEventListener('click', function(event) {
-                event.preventDefault();
+document.querySelectorAll('.button').forEach(button => {
+    button.addEventListener('click', function(event) {
+        event.preventDefault();
 
-                const productName = this.parentElement.querySelector('h3').innerText;
-                const price = this.parentElement.querySelector('p').innerText;
+        const productName = this.parentElement.querySelector('h3').innerText;
+        const price = this.parentElement.querySelector('p').innerText;
+        const productImage = this.parentElement.querySelector('.shirt-image').src;  // Get the image URL
 
-                // Create a message to send via WhatsApp
-                const message = `Hello, I am interested in ordering the ${productName} for ${price}. Please assist me!`;
-                const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        // Create a message to send via WhatsApp, including the image URL
+        const message = `Hello, I am interested in ordering the ${productName} for ${price}. Here is the product image: ${productImage}. Please assist me!`;
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
-                // Open WhatsApp chat
-                window.open(whatsappURL, '_blank');
-            });
-        });
+        // Open WhatsApp chat
+        window.open(whatsappURL, '_blank');
+    });
+});
 
         // Zoom Image Modal Logic
         const modal = document.getElementById('imageModal');
