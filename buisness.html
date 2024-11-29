@@ -26,6 +26,7 @@
             gap: 20px; /* Add spacing between cards */
             margin: 20px auto;
             padding: 20px;
+            flex-wrap: wrap; /* Allow wrapping if needed */
         }
 
         .product-card {
@@ -36,6 +37,7 @@
             padding: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             width: 300px; /* Set a fixed width for the cards */
+            flex: 0 1 auto; /* Allow flexibility */
         }
 
         .image-container {
@@ -152,7 +154,7 @@
             </div>
             <h3>Porsche Shirt</h3>
             <p>$29.99</p>
-            <a href="#" class="button" id="orderBtn1">Order Now</a>
+            <a href="haha" class="button" id="viewDetails1">View Details</a>
         </div>
 
         <!-- Second Product Card -->
@@ -163,7 +165,18 @@
             </div>
             <h3>Luxury Shirt</h3>
             <p>$39.99</p>
-            <a href="#" class="button" id="orderBtn2">Order Now</a>
+            <a href="why" class="button" id="viewDetails2">View Details</a>
+        </div>
+
+        <!-- Third Product Card -->
+        <div class="product-card">
+            <div class="image-container">
+                <img src="shirt3-front.jpg" alt="Shirt Front View" class="shirt-image" data-fullsize="shirt3-front.jpg">
+                <img src="shirt3-back.jpg" alt="Shirt Back View" class="shirt-image" data-fullsize="shirt3-back.jpg">
+            </div>
+            <h3>Casual Shirt</h3>
+            <p>$19.99</p>
+            <a href="hha.html" class="button" id="viewDetails3">View Details</a>
         </div>
     </div>
 
@@ -205,7 +218,7 @@
             }
         });
 
-        // Order Now Button
+        // View Details Button (Updated)
         document.querySelectorAll('.button').forEach(button => {
             button.addEventListener('click', function (event) {
                 event.preventDefault();
