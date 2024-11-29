@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wearify - Stylish Shirts</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"> 
     <style>
         /* Global Styles */
         .hero {
@@ -21,12 +21,12 @@
         /* Flexbox container for the product cards */
         .product-card-container {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
+            justify-content: center; /* Center the cards horizontally */
+            align-items: center; /* Center the cards vertically */
+            gap: 20px; /* Add spacing between cards */
             margin: 20px auto;
             padding: 20px;
-            flex-wrap: wrap;
+            flex-wrap: wrap; /* Allow wrapping if needed */
         }
 
         .product-card {
@@ -36,8 +36,8 @@
             border-radius: 8px;
             padding: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            flex: 0 1 auto;
+            width: 300px; /* Set a fixed width for the cards */
+            flex: 0 1 auto; /* Allow flexibility */
         }
 
         .image-container {
@@ -68,13 +68,29 @@
             text-decoration: none;
             border-radius: 5px;
             transition: background-color 0.3s ease;
+            margin-top: 10px;
         }
 
         .button:hover {
             background-color: #218838;
         }
 
-        /* Modal Styles for Zoomed Image */
+        .order-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .order-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Modal Styles */
         .modal {
             display: none;
             position: fixed;
@@ -140,148 +156,162 @@
         <div class="caption">
             <h2>Elevate Your Style</h2>
             <p>Discover the finest shirts tailored just for you.</p>
-            <img src="download.jpg" alt="Style"
         </div>
     </section>
-<!-- Featured Shirts Section -->
-<h2>Featured Shirts</h2>
-<div class="product-card-container">
-    <!-- First Product Card (Featured) -->
-    <div class="product-card">
-        <div class="image-container">
-            <img src="por.jpg" alt="Shirt Front View" class="shirt-image" data-fullsize="por.jpg">
-            <img src="nott.jpg" alt="Shirt Back View" class="shirt-image" data-fullsize="nott.jpg">
+
+    <!-- Featured Shirts Section -->
+    <h2>Featured Shirts</h2>
+    <div class="product-card-container">
+        <!-- First Product Card (Featured) -->
+        <div class="product-card">
+            <div class="image-container">
+                <img src="por.jpg" alt="Shirt Front View" class="shirt-image" data-fullsize="por.jpg">
+                <img src="nott.jpg" alt="Shirt Back View" class="shirt-image" data-fullsize="nott.jpg">
+            </div>
+            <h3>Porsche Shirt</h3>
+            <p>$29.99</p>
+            <a href="haha" class="button" id="viewDetails1">View Details</a>
+            <a href="#" class="order-button" id="orderNow1">Order Now</a>
         </div>
-        <h3>Porsche Shirt</h3>
-        <p>$29.99</p>
-        <a href="haha" class="button" id="viewDetails1">View Details</a>
+
+        <!-- Second Product Card (Featured) -->
+        <div class="product-card">
+            <div class="image-container">
+                <img src="dr.jpg" alt="Shirt Front View" class="shirt-image" data-fullsize="dr.jpg">
+                <img src="nott.jpg" alt="Shirt Back View" class="shirt-image" data-fullsize="nott.jpg">
+            </div>
+            <h3>Luxury Shirt</h3>
+            <p>$39.99</p>
+            <a href="why" class="button" id="viewDetails2">View Details</a>
+            <a href="#" class="order-button" id="orderNow2">Order Now</a>
+        </div>
+
+        <!-- Third Product Card (Featured) -->
+        <div class="product-card">
+            <div class="image-container">
+                <img src="hehe.jpg" alt="Shirt Front View" class="shirt-image" data-fullsize="hehe.jpg">
+            </div>
+            <h3>Bat-man Shirt</h3>
+            <p>$19.99</p>
+            <a href="hha.html" class="button" id="viewDetails3">View Details</a>
+            <a href="#" class="order-button" id="orderNow3">Order Now</a>
+        </div>
     </div>
 
-    <!-- Second Product Card (Featured) -->
-    <div class="product-card">
-        <div class="image-container">
-            <img src="dr.jpg" alt="Shirt Front View" class="shirt-image" data-fullsize="dr.jpg">
-            <img src="nott.jpg" alt="Shirt Back View" class="shirt-image" data-fullsize="nott.jpg">
+    <!-- Unfeatured Shirts Section -->
+    <h2>Unfeatured Shirts</h2>
+    <div class="product-card-container">
+        <!-- First Unfeatured Card -->
+        <div class="product-card">
+            <div class="image-container">
+                <img src="unfeatured1.jpg" alt="Unfeatured Shirt Front View" class="shirt-image" data-fullsize="unfeatured1.jpg">
+            </div>
+            <h3>Casual Shirt</h3>
+            <p>$24.99</p>
+            <a href="casual.html" class="button">View Details</a>
+            <a href="#" class="order-button">Order Now</a>
         </div>
-        <h3>Luxury Shirt</h3>
-        <p>$39.99</p>
-        <a href="why" class="button" id="viewDetails2">View Details</a>
+
+        <!-- Second Unfeatured Card -->
+        <div class="product-card">
+            <div class="image-container">
+                <img src="unfeatured2.jpg" alt="Unfeatured Shirt Front View" class="shirt-image" data-fullsize="unfeatured2.jpg">
+            </div>
+            <h3>Classic Shirt</h3>
+            <p>$25.99</p>
+            <a href="classic.html" class="button">View Details</a>
+            <a href="#" class="order-button">Order Now</a>
+        </div>
+
+        <!-- Third Unfeatured Card -->
+        <div class="product-card">
+            <div class="image-container">
+                <img src="unfeatured3.jpg" alt="Unfeatured Shirt Front View" class="shirt-image" data-fullsize="unfeatured3.jpg">
+            </div>
+            <h3>Summer Shirt</h3>
+            <p>$22.99</p>
+            <a href="summer.html" class="button">View Details</a>
+            <a href="#" class="order-button">Order Now</a>
+        </div>
+
+        <!-- Fourth Unfeatured Card -->
+        <div class="product-card">
+            <div class="image-container">
+                <img src="unfeatured4.jpg" alt="Unfeatured Shirt Front View" class="shirt-image" data-fullsize="unfeatured4.jpg">
+            </div>
+            <h3>V-neck Shirt</h3>
+            <p>$27.99</p>
+            <a href="vneck.html" class="button">View Details</a>
+            <a href="#" class="order-button">Order Now</a>
+        </div>
+
+        <!-- Fifth Unfeatured Card -->
+        <div class="product-card">
+            <div class="image-container">
+                <img src="unfeatured5.jpg" alt="Unfeatured Shirt Front View" class="shirt-image" data-fullsize="unfeatured5.jpg">
+            </div>
+            <h3>Graphic Shirt</h3>
+            <p>$29.99</p>
+            <a href="graphic.html" class="button">View Details</a>
+            <a href="#" class="order-button">Order Now</a>
+        </div>
     </div>
 
-    <!-- Third Product Card (Featured) -->
-    <div class="product-card">
-        <div class="image-container">
-            <img src="hehe.jpg" alt="Shirt Front View" class="shirt-image" data-fullsize="hehe.jpg">
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal">&times;</button>
+            <img src="" alt="Zoomed in Shirt" id="modalImage">
         </div>
-        <h3>Bat-man Shirt</h3>
-        <p>$19.99</p>
-        <a href="hha.html" class="button" id="viewDetails3">View Details</a>
     </div>
-</div>
-
-<!-- Unfeatured Shirts Section -->
-<h2> other collections</h2>
-<div class="product-card-container">
-    <!-- First Unfeatured Card -->
-    <div class="product-card">
-        <div class="image-container">
-            <img src="unfeatured1.jpg" alt="Unfeatured Shirt Front View" class="shirt-image" data-fullsize="unfeatured1.jpg">
-        </div>
-        <h3>Casual Shirt</h3>
-        <p>$24.99</p>
-        <a href="casual.html" class="button">View Details</a>
-    </div>
-
-    <!-- Second Unfeatured Card -->
-    <div class="product-card">
-        <div class="image-container">
-            <img src="unfeatured2.jpg" alt="Unfeatured Shirt Front View" class="shirt-image" data-fullsize="unfeatured2.jpg">
-        </div>
-        <h3>Classic Shirt</h3>
-        <p>$25.99</p>
-        <a href="classic.html" class="button">View Details</a>
-    </div>
-
-    <!-- Third Unfeatured Card -->
-    <div class="product-card">
-        <div class="image-container">
-            <img src="unfeatured3.jpg" alt="Unfeatured Shirt Front View" class="shirt-image" data-fullsize="unfeatured3.jpg">
-        </div>
-        <h3>Summer Shirt</h3>
-        <p>$22.99</p>
-        <a href="summer.html" class="button">View Details</a>
-    </div>
-
-    <!-- Fourth Unfeatured Card -->
-    <div class="product-card">
-        <div class="image-container">
-            <img src="unfeatured4.jpg" alt="Unfeatured Shirt Front View" class="shirt-image" data-fullsize="unfeatured4.jpg">
-        </div>
-        <h3>V-neck Shirt</h3>
-        <p>$27.99</p>
-        <a href="vneck.html" class="button">View Details</a>
-    </div>
-
-    <!-- Fifth Unfeatured Card -->
-    <div class="product-card">
-        <div class="image-container">
-            <img src="unfeatured5.jpg" alt="Unfeatured Shirt Front View" class="shirt-image" data-fullsize="unfeatured5.jpg">
-        </div>
-        <h3>Graphic Shirt</h3>
-        <p>$30.99</p>
-        <a href="graphic.html" class="button">View Details</a>
-    </div>
-</div>
-
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 Wearify. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript -->
     <script>
-// WhatsApp Order Logic
-const whatsappNumber = "923002721974"; // Replace with your WhatsApp number
-
-document.querySelectorAll('.button').forEach(button => {
-    button.addEventListener('click', function(event) {
-        event.preventDefault();
-
-        const productName = this.parentElement.querySelector('h3').innerText;
-        const price = this.parentElement.querySelector('p').innerText;
-        const productImage = this.parentElement.querySelector('.shirt-image').src;  // Get the image URL
-
-        // Create a message to send via WhatsApp, including the image URL
-        const message = `Hello, I am interested in ordering the ${productName} for ${price}. Here is the product image: ${productImage}. Please assist me!`;
-        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-
-        // Open WhatsApp chat
-        window.open(whatsappURL, '_blank');
-    });
-});
-
-        // Zoom Image Modal Logic
-        const modal = document.getElementById('imageModal');
-        const modalImage = document.getElementById('modalImage');
+        // Image zoom functionality
         const shirtImages = document.querySelectorAll('.shirt-image');
+        const modal = document.getElementById('modal');
+        const modalImage = document.getElementById('modalImage');
         const closeModal = document.getElementById('closeModal');
 
-        shirtImages.forEach(img => {
-            img.addEventListener('click', function() {
+        shirtImages.forEach(image => {
+            image.addEventListener('click', function () {
                 modalImage.src = this.dataset.fullsize;
                 modal.style.display = 'flex';
             });
         });
 
-        closeModal.addEventListener('click', function() {
+        closeModal.addEventListener('click', function () {
             modal.style.display = 'none';
         });
 
-        window.addEventListener('click', function(event) {
+        window.addEventListener('click', function (event) {
             if (event.target === modal) {
                 modal.style.display = 'none';
             }
+        });
+
+        // WhatsApp Order Logic
+        const whatsappNumber = "923002721974"; // Replace with your WhatsApp number
+
+        document.querySelectorAll('.order-button').forEach(button => {
+            button.addEventListener('click', function (event) {
+                event.preventDefault();
+
+                const productName = this.parentElement.querySelector('h3').innerText;
+                const price = this.parentElement.querySelector('p').innerText;
+                const productImage = this.parentElement.querySelector('.shirt-image').src;  // Get the image URL
+
+                // Create a message to send via WhatsApp, including the image URL
+                const message = `Hello, I am interested in ordering the ${productName} for ${price}. Here is the product image: ${productImage}. Please assist me!`;
+                const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+                // Open WhatsApp chat
+                window.open(whatsappURL, '_blank');
+            });
         });
     </script>
 </body>
