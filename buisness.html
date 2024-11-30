@@ -336,17 +336,29 @@
             }
         });
 
-        // Order functionality
-        const orderNow1 = document.getElementById('orderNow1');
-        const orderNow2 = document.getElementById('orderNow2');
+// WhatsApp Order Logic
+const whatsappNumber = "923002721974"; // Replace with your WhatsApp number
 
-        orderNow1.addEventListener('click', () => {
-            alert('You have placed an order for the Porsche Shirt!');
-        });
+document.querySelectorAll('.order-button').forEach(button => {
+    button.addEventListener('click', function (event) {
+        event.preventDefault();
 
-        orderNow2.addEventListener('click', () => {
-            alert('You have placed an order for the Dream Shirt!');
-        });
+        // Ensure the button's parent is the product card container
+        const productCard = this.closest('.product-card');
+        
+        const productName = productCard.querySelector('h3').innerText;
+        const price = productCard.querySelector('p').innerText;
+        const productImage = productCard.querySelector('.shirt-image').src;  // Get the image URL
+
+        // Create a message to send via WhatsApp, including the image URL
+        const message = `Hello, I am interested in ordering the ${productName} for ${price}. Here is the product image: ${productImage}. Please assist me!`;
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+        // Open WhatsApp chat
+        window.open(whatsappURL, '_blank');
+    });
+});
+
     </script>
 </body>
 </html>
