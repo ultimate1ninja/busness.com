@@ -313,23 +313,30 @@ footer p {
     </footer>
 
     <script>
-     <script>
-        // Image zoom functionality
-        const shirtImages = document.querySelectorAll('.shirt-image');
-        const modal = document.getElementById('modal');
-        const modalImage = document.getElementById('modalImage');
-        const closeModal = document.getElementById('closeModal');
+// Image zoom functionality
+const shirtImages = document.querySelectorAll('.shirt-image');
+const modal = document.getElementById('modal');
+const modalImage = document.getElementById('modalImage');
+const closeModal = document.getElementById('closeModal');
 
-        shirtImages.forEach(image => {
-            image.addEventListener('click', function () {
-                modal.classList.add('show');
-                modalImage.src = image.getAttribute('data-fullsize');
-            });
-        });
+shirtImages.forEach(image => {
+    image.addEventListener('click', function () {
+        modal.classList.add('show');
+        modalImage.src = image.getAttribute('data-fullsize');
+    });
+});
 
-        closeModal.addEventListener('click', function () {
-            modal.classList.remove('show');
-        });
+closeModal.addEventListener('click', function () {
+    modal.classList.remove('show');
+});
+
+// Optional: Close modal when clicking outside the image area
+modal.addEventListener('click', function (e) {
+    if (e.target === modal) {
+        modal.classList.remove('show');
+    }
+});
+
         // WhatsApp Order Logic
         const whatsappNumber = "923002721974"; // Replace with your WhatsApp number
 
