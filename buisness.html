@@ -313,6 +313,7 @@ footer p {
     </footer>
 
     <script>
+     <script>
         // Image zoom functionality
         const shirtImages = document.querySelectorAll('.shirt-image');
         const modal = document.getElementById('modal');
@@ -321,21 +322,14 @@ footer p {
 
         shirtImages.forEach(image => {
             image.addEventListener('click', function () {
-                modalImage.src = this.dataset.fullsize;
-                modal.style.display = 'flex';
+                modal.classList.add('show');
+                modalImage.src = image.getAttribute('data-fullsize');
             });
         });
 
         closeModal.addEventListener('click', function () {
-            modal.style.display = 'none';
+            modal.classList.remove('show');
         });
-
-        window.addEventListener('click', function (event) {
-            if (event.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
-
         // WhatsApp Order Logic
         const whatsappNumber = "923002721974"; // Replace with your WhatsApp number
 
