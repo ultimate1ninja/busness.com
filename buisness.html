@@ -313,32 +313,45 @@
     </footer>
 
     <script>
-    // Modal functionality for image zoom
-    const images = document.querySelectorAll('.shirt-image'); // Select all shirt images
+// Modal functionality for image zoom
+document.addEventListener("DOMContentLoaded", () => {
+    const images = document.querySelectorAll('.shirt-image'); // Select all images with the class
     const modal = document.getElementById('imageModal'); // Modal container
-    const modalImage = document.getElementById('modalImage'); // Modal image
-    const closeModal = document.getElementById('closeModal'); // Close button
+    const modalImage = document.getElementById('modalImage'); // Image element inside the modal
+    const closeModal = document.getElementById('closeModal'); // Modal close button
 
-    // Add click event listeners to each image
+    if (!images.length || !modal || !modalImage || !closeModal) {
+        console.error("Required elements for modal functionality are missing.");
+        return;
+    }
+
+    // Add click event listeners to all shirt images
     images.forEach(image => {
-        image.addEventListener('click', (event) => {
-            modal.style.display = 'flex'; // Show the modal
-            modalImage.src = event.target.dataset.fullsize; // Use the `data-fullsize` attribute for the image
+        image.addEventListener('click', () => {
+            const fullSizeImage = image.dataset.fullsize; // Fetch the `data-fullsize` attribute
+            if (fullSizeImage) {
+                modalImage.src = fullSizeImage; // Set modal image source
+                modal.style.display = 'flex'; // Show the modal
+            } else {
+                console.error("No `data-fullsize` attribute found for the clicked image.");
+            }
         });
     });
 
     // Close modal on close button click
     closeModal.addEventListener('click', () => {
-        modal.style.display = 'none';
+        modal.style.display = 'none'; // Hide the modal
+        modalImage.src = ''; // Reset the modal image source
     });
 
-    // Close modal when clicking outside the modal content
-    window.addEventListener('click', (event) => {
-        if (event.target === modal) {
-            modal.style.display = 'none';
+    // Close modal on clicking outside the modal content
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none'; // Hide the modal
+            modalImage.src = ''; // Reset the modal image source
         }
     });
-
+});
 
 // WhatsApp Order Logic
 const whatsappNumber = "923002721974"; // Replace with your WhatsApp number
