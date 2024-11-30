@@ -311,44 +311,44 @@
     <footer>
         <p>&copy; 2024 Wearify. All rights reserved.</p>
     </footer>
-
-    <script>
-// Modal functionality for image zoom
+<script>
+// Modal Logic
 document.addEventListener("DOMContentLoaded", () => {
-    const images = document.querySelectorAll('.shirt-image'); // Select all images with the class
-    const modal = document.getElementById('imageModal'); // Modal container
-    const modalImage = document.getElementById('modalImage'); // Image element inside the modal
-    const closeModal = document.getElementById('closeModal'); // Modal close button
+    const images = document.querySelectorAll('.shirt-image');
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const closeModal = document.getElementById('closeModal');
 
+    // Ensure elements are present
     if (!images.length || !modal || !modalImage || !closeModal) {
-        console.error("Required elements for modal functionality are missing.");
+        console.error("Required modal elements are missing. Please check the HTML structure.");
         return;
     }
 
-    // Add click event listeners to all shirt images
+    // Show modal with full-size image on image click
     images.forEach(image => {
         image.addEventListener('click', () => {
-            const fullSizeImage = image.dataset.fullsize; // Fetch the `data-fullsize` attribute
-            if (fullSizeImage) {
-                modalImage.src = fullSizeImage; // Set modal image source
-                modal.style.display = 'flex'; // Show the modal
+            const fullSizeUrl = image.dataset.fullsize;
+            if (fullSizeUrl) {
+                modalImage.src = fullSizeUrl;
+                modal.classList.add('show');
             } else {
-                console.error("No `data-fullsize` attribute found for the clicked image.");
+                console.error("Image is missing a 'data-fullsize' attribute.");
             }
         });
     });
 
-    // Close modal on close button click
+    // Close modal when the close button is clicked
     closeModal.addEventListener('click', () => {
-        modal.style.display = 'none'; // Hide the modal
-        modalImage.src = ''; // Reset the modal image source
+        modal.classList.remove('show');
+        modalImage.src = "";
     });
 
-    // Close modal on clicking outside the modal content
+    // Close modal when clicking outside the modal content
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
-            modal.style.display = 'none'; // Hide the modal
-            modalImage.src = ''; // Reset the modal image source
+            modal.classList.remove('show');
+            modalImage.src = "";
         }
     });
 });
@@ -356,26 +356,38 @@ document.addEventListener("DOMContentLoaded", () => {
 // WhatsApp Order Logic
 const whatsappNumber = "923002721974"; // Replace with your WhatsApp number
 
-document.querySelectorAll('.order-button').forEach(button => {
-    button.addEventListener('click', function (event) {
-        event.preventDefault();
+document.addEventListener('DOMContentLoaded', () => {
+    const orderButtons = document.querySelectorAll('.order-button');
 
-        // Ensure the button's parent is the product card container
-        const productCard = this.closest('.product-card');
-        
-        const productName = productCard.querySelector('h3').innerText;
-        const price = productCard.querySelector('p').innerText;
-        const productImage = productCard.querySelector('.shirt-image').src;  // Get the image URL
+    if (!orderButtons.length) {
+        console.error("No order buttons found. Ensure you have buttons with the class 'order-button'.");
+        return;
+    }
 
-        // Create a message to send via WhatsApp, including the image URL
-        const message = `Hello, I am interested in ordering the ${productName} for ${price}. Here is the product image: ${productImage}. Please assist me!`;
-        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    orderButtons.forEach(button => {
+        button.addEventListener('click', function (event) {
+            event.preventDefault();
 
-        // Open WhatsApp chat
-        window.open(whatsappURL, '_blank');
+            // Ensure the button is within a product card
+            const productCard = this.closest('.product-card');
+            if (!productCard) {
+                console.error("Order button is not inside a product card.");
+                return;
+            }
+
+            const productName = productCard.querySelector('h3')?.innerText || "Unknown Product";
+            const price = productCard.querySelector('p')?.innerText || "Unknown Price";
+            const productImage = productCard.querySelector('.shirt-image')?.src || "No Image";
+
+            // Construct the WhatsApp message
+            const message = `Hello, I am interested in ordering the ${productName} for ${price}. Here is the product image: ${productImage}. Please assist me!`;
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+            // Open WhatsApp chat in a new tab
+            window.open(whatsappURL, '_blank');
+        });
     });
 });
-
-    </script>
+</script>
 </body>
 </html>
