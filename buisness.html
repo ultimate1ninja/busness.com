@@ -228,16 +228,17 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
-        <h1>Wearify</h1>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#featured-shirts">Products</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+<header class="header">
+    <h1>Wearify</h1>
+    <nav>
+        <a href="#customization">Create Your Own Shirts</a>
+        <a href="#featured-shirts">Featured Shirts</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
 <!-- Customization Section -->
-<section class="customization">
+<section class="customization" id="customization">
     <h2>Personalize Your Shirt</h2>
     <p>Want to make your shirt unique? We can add your name or any text on your shirt. Simply let us know during the ordering process!</p>
     <div class="customization-example">
@@ -256,7 +257,7 @@
     </section>
 
     <!-- Featured Shirts Section -->
-    <h2>Featured Shirts</h2>
+    <h2> id="featured-shirts">Featured Shirts</h2>
     <div class="product-card-container">
         <div class="product-card">
             <div class="image-container">
@@ -299,6 +300,30 @@
             <a href="#" class="order-button">Place Order Now</a>
         </div>
     </div>
+    <!-- Contact Section -->
+<section id="contact" style="padding: 50px 20px; text-align: center; background-color: #e9ecef;">
+    <h2>Contact Us</h2>
+    <p>If you have any questions or need help, feel free to reach out to us!</p>
+    <form action="https://example.com/submit" method="post" style="max-width: 500px; margin: 0 auto;">
+        <div style="margin-bottom: 15px;">
+            <input type="text" name="name" placeholder="Your Name" required 
+                   style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+        </div>
+        <div style="margin-bottom: 15px;">
+            <input type="email" name="email" placeholder="Your Email" required 
+                   style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+        </div>
+        <div style="margin-bottom: 15px;">
+            <textarea name="message" placeholder="Your Message" rows="5" required 
+                      style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+        </div>
+        <button type="submit" 
+                style="padding: 10px 20px; background-color: #28a745; color: #fff; border: none; border-radius: 5px; cursor: pointer;">
+            Send Message
+        </button>
+    </form>
+</section>
+
 
     <!-- Modal for Image Zoom -->
     <div class="modal" id="imageModal">
