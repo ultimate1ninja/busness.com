@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wearify - Stylish Shirts</title>
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* Global Styles */
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
             margin: 0;
             padding: 0;
         }
@@ -17,16 +19,17 @@
         .hero {
             text-align: center;
             padding: 50px 20px;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
             color: white;
         }
 
         .hero .caption h2 {
-            font-size: 2.5em;
+            font-size: 3em;
             margin-bottom: 10px;
         }
 
         .hero .caption p {
-            font-size: 1.2em;
+            font-size: 1.5em;
             margin-bottom: 0;
         }
 
@@ -56,12 +59,12 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             width: 280px;
             flex: 0 1 auto;
-            transition: transform 0.2s ease;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .product-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15);
         }
 
         .image-container {
@@ -89,16 +92,17 @@
         .order-button {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #28a745;
+            background-color: #007bff;
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
             margin-top: 10px;
         }
 
         .order-button:hover {
-            background-color: #218838;
+            background-color: #0056b3;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         /* Modal Styles */
@@ -180,11 +184,11 @@
             }
 
             .hero .caption h2 {
-                font-size: 2em;
+                font-size: 2.5em;
             }
 
             .hero .caption p {
-                font-size: 1.1em;
+                font-size: 1.3em;
             }
         }
 
@@ -192,19 +196,19 @@
         .customization {
             text-align: center;
             padding: 50px 20px;
-            background: linear-gradient(to right, #add8e6, #06402b); /* Gradient background */
+            background: linear-gradient(to right, #add8e6, #06402b);
             margin: 20px 0;
             border-radius: 8px;
         }
 
         .customization h2 {
-            font-size: 2em;
-            margin-bottom: 10px;
+            font-size: 2.5em;
+            margin-bottom: 15px;
         }
 
         .customization p {
-            font-size: 1.2em;
-            margin-bottom: 20px;
+            font-size: 1.3em;
+            margin-bottom: 25px;
         }
 
         .customization-example {
@@ -247,6 +251,7 @@
             <p><strong>Example:</strong> A name like "John Doe" printed on the front or back of your shirt!</p>
         </div>
     </section>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="caption">
