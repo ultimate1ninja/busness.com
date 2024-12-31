@@ -228,25 +228,25 @@
 </head>
 <body>
     <!-- Header -->
-<header class="header">
-    <h1>Wearify</h1>
-    <nav>
-        <a href="#customization">Create Your Own Shirts</a>
-        <a href="#featured-shirts">Featured Shirts</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
+    <header class="header">
+        <h1>Wearify</h1>
+        <nav>
+            <a href="#customization">Create Your Own Shirts</a>
+            <a href="#featured-shirts">Featured Shirts</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-<!-- Customization Section -->
-<section class="customization" id="customization">
-    <h2>Personalize Your Shirt</h2>
-    <p>Want to make your shirt unique? We can add your name or any text on your shirt. Simply let us know during the ordering process!</p>
-    <div class="customization-example">
-        <h3>Example</h3>
-        <img src="a.jpg" alt="Shirt with name example" class="custom-shirt-example-img" />
-        <p><strong>Example:</strong> A name like "John Doe" printed on the front or back of your shirt!</p>
-    </div>
-</section>
+    <!-- Customization Section -->
+    <section class="customization" id="customization">
+        <h2>Personalize Your Shirt</h2>
+        <p>Want to make your shirt unique? We can add your name or any text on your shirt. Simply let us know during the ordering process!</p>
+        <div class="customization-example">
+            <h3>Example</h3>
+            <img src="a.jpg" alt="Shirt with name example" class="custom-shirt-example-img" />
+            <p><strong>Example:</strong> A name like "John Doe" printed on the front or back of your shirt!</p>
+        </div>
+    </section>
     <!-- Hero Section -->
     <section class="hero">
         <div class="caption">
@@ -257,7 +257,7 @@
     </section>
 
     <!-- Featured Shirts Section -->
-    <h2> id="featured-shirts">Featured Shirts</h2>
+    <h2 id="featured-shirts">Featured Shirts</h2>
     <div class="product-card-container">
         <div class="product-card">
             <div class="image-container">
@@ -314,86 +314,83 @@
     <footer>
         <p>&copy; 2024 Wearify. All rights reserved.</p>
     </footer>
-<script>
-// Modal Logic
-document.addEventListener("DOMContentLoaded", () => {
-    const images = document.querySelectorAll('.shirt-image');
-    const modal = document.getElementById('imageModal');
-    const modalImage = document.getElementById('modalImage');
-    const closeModal = document.getElementById('closeModal');
+    <script>
+        // Modal Logic
+        document.addEventListener("DOMContentLoaded", () => {
+            const images = document.querySelectorAll('.shirt-image');
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const closeModal = document.getElementById('closeModal');
 
-    // Ensure elements are present
-    if (!images.length || !modal || !modalImage || !closeModal) {
-        console.error("Required modal elements are missing. Please check the HTML structure.");
-        return;
-    }
-
-    // Show modal with full-size image on image click
-    images.forEach(image => {
-        image.addEventListener('click', () => {
-            const fullSizeUrl = image.dataset.fullsize;
-            if (fullSizeUrl) {
-                modalImage.src = fullSizeUrl;
-                modal.classList.add('show');
-            } else {
-                console.error("Image is missing a 'data-fullsize' attribute.");
-            }
-        });
-    });
-
-    // Close modal when the close button is clicked
-    closeModal.addEventListener('click', () => {
-        modal.classList.remove('show');
-        modalImage.src = "";
-    });
-
-    // Close modal when clicking outside the modal content
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.classList.remove('show');
-            modalImage.src = "";
-        }
-    });
-});
-
-// WhatsApp Order Logic
-const whatsappNumber = "923002721974"; // Replace with your WhatsApp number
-
-document.addEventListener('DOMContentLoaded', () => {
-    const orderButtons = document.querySelectorAll('.order-button');
-
-    if (!orderButtons.length) {
-        console.error("No order buttons found. Ensure you have buttons with the class 'order-button'.");
-        return;
-    }
-
-    orderButtons.forEach(button => {
-        button.addEventListener('click', function (event) {
-            event.preventDefault();
-
-            // Ensure the button is within a product card
-            const productCard = this.closest('.product-card');
-            if (!productCard) {
-                console.error("Order button is not inside a product card.");
+            // Ensure elements are present
+            if (!images.length || !modal || !modalImage || !closeModal) {
+                console.error("Required modal elements are missing. Please check the HTML structure.");
                 return;
             }
 
-            const productName = productCard.querySelector('h3')?.innerText || "Unknown Product";
-            const price = productCard.querySelector('p')?.innerText || "Unknown Price";
-            const productImage = productCard.querySelector('.shirt-image')?.src || "No Image";
+            // Show modal with full-size image on image click
+            images.forEach(image => {
+                image.addEventListener('click', () => {
+                    const fullSizeUrl = image.dataset.fullsize;
+                    if (fullSizeUrl) {
+                        modalImage.src = fullSizeUrl;
+                        modal.classList.add('show');
+                    } else {
+                        console.error("Image is missing a 'data-fullsize' attribute.");
+                    }
+                });
+            });
 
-            // Construct the WhatsApp message
-            const message = Hello, I am interested in ordering the ${productName} for ${price}. Here is the product image: ${productImage}. Please assist me!;
-            const whatsappURL = https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)};
+            // Close modal when the close button is clicked
+            closeModal.addEventListener('click', () => {
+                modal.classList.remove('show');
+                modalImage.src = "";
+            });
 
-            // Open WhatsApp chat in a new tab
-            window.open(whatsappURL, '_blank');
+            // Close modal when clicking outside the modal content
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('show');
+                    modalImage.src = "";
+                }
+            });
         });
-    });
-});
-</script>
+
+        // WhatsApp Order Logic
+        const whatsappNumber = "923002721974"; // Replace with your WhatsApp number
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const orderButtons = document.querySelectorAll('.order-button');
+
+            if (!orderButtons.length) {
+                console.error("No order buttons found. Ensure you have buttons with the class 'order-button'.");
+                return;
+            }
+
+            orderButtons.forEach(button => {
+                button.addEventListener('click', function (event) {
+                    event.preventDefault();
+
+                    // Ensure the button is within a product card
+                    const productCard = this.closest('.product-card');
+                    if (!productCard) {
+                        console.error("Order button is not inside a product card.");
+                        return;
+                    }
+
+                    const productName = productCard.querySelector('h3')?.innerText || "Unknown Product";
+                    const price = productCard.querySelector('p')?.innerText || "Unknown Price";
+                    const productImage = productCard.querySelector('.shirt-image')?.src || "No Image";
+
+                    // Construct the WhatsApp message
+                    const message = `Hello, I am interested in ordering the ${productName} for ${price}. Here is the product image: ${productImage}. Please assist me!`;
+                    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+                    // Open WhatsApp chat in a new tab
+                    window.open(whatsappURL, '_blank');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-
-ChatGPT said:
-ChatGPT
