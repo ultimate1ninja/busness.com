@@ -14,10 +14,8 @@
             background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient background */
             color: #333;
             box-sizing: border-box;
-            overflow-x: hidden;
         }
 
-        /* Header */
         header {
             background-color: rgba(0, 0, 0, 0.7);
             color: #fff;
@@ -26,9 +24,6 @@
             justify-content: space-between;
             align-items: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
         }
 
         header h1 {
@@ -50,49 +45,41 @@
 
         /* Hero Section */
         .hero {
-            background: url('hero-image.jpg') no-repeat center center/cover;
-            color: white;
-            padding: 120px 20px;
             text-align: center;
-            animation: fadeIn 1.5s ease-in-out;
+            padding: 100px 20px;
+            color: #fff;
+            background: linear-gradient(to right, #feb47b, #ff7e5f);
         }
 
         .hero h2 {
             font-size: 4em;
             margin-bottom: 10px;
-            animation: slideIn 1s ease-out;
         }
 
         .hero p {
             font-size: 1.6em;
-            opacity: 0.8;
-            animation: slideIn 1.2s ease-out;
         }
 
-        /* 3D Product Cards */
+        /* Product Cards */
         .product-card-container {
             display: flex;
             justify-content: center;
             gap: 30px;
             padding: 40px;
-            flex-wrap: wrap;
-            animation: fadeInUp 1.5s ease-out;
             position: relative;
-            animation: shuffleCards 5s infinite ease-in-out;
         }
 
         .product-card {
-            background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient for card background */
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             width: 250px;
             text-align: center;
-            transform-style: preserve-3d;
             transition: transform 0.5s ease, box-shadow 0.3s ease;
             cursor: pointer;
-            overflow: hidden;
-            perspective: 1500px; /* Add perspective for 3D effect */
+            transform-style: preserve-3d;
+            position: absolute;
         }
 
         .product-card img {
@@ -100,24 +87,17 @@
             height: 250px;
             object-fit: cover;
             border-radius: 8px;
-            transition: transform 0.3s ease;
-        }
-
-        .product-card:hover {
-            transform: rotateY(15deg) rotateX(-10deg) scale(1.05);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            margin-bottom: 15px;
         }
 
         .product-card h3 {
             font-size: 1.5em;
             color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
         }
 
         .product-card p {
             font-size: 1.2em;
             color: #fff;
-            opacity: 0.9;
         }
 
         .order-button {
@@ -129,7 +109,6 @@
             cursor: pointer;
             font-size: 1em;
             transition: background-color 0.3s ease, transform 0.2s ease;
-            letter-spacing: 1px;
         }
 
         .order-button:hover {
@@ -137,9 +116,30 @@
             transform: scale(1.05);
         }
 
-        .order-button:focus {
-            outline: none;
-            box-shadow: 0 0 5px #28a745;
+        /* Animations */
+        @keyframes switchPositions {
+            0%, 100% {
+                transform: translateX(-300px); /* Left position */
+            }
+            33% {
+                transform: translateX(0); /* Middle position */
+            }
+            66% {
+                transform: translateX(300px); /* Right position */
+            }
+        }
+
+        /* Card Positions */
+        .product-card:nth-child(1) {
+            animation: switchPositions 6s infinite ease-in-out;
+        }
+
+        .product-card:nth-child(2) {
+            animation: switchPositions 6s infinite ease-in-out 2s; /* Delayed start */
+        }
+
+        .product-card:nth-child(3) {
+            animation: switchPositions 6s infinite ease-in-out 4s; /* Delayed start */
         }
 
         /* Footer */
@@ -148,85 +148,6 @@
             color: #fff;
             padding: 20px;
             text-align: center;
-            font-size: 1.2em;
-            margin-top: 40px;
-        }
-
-        footer a {
-            color: #28a745;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateY(30px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes shuffleCards {
-            0% {
-                transform: translateX(0);
-            }
-            33% {
-                transform: translateX(-250px);
-            }
-            66% {
-                transform: translateX(250px);
-            }
-            100% {
-                transform: translateX(0);
-            }
-        }
-
-        /* Media Queries */
-        @media (max-width: 768px) {
-            .product-card-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .product-card {
-                width: 100%;
-                margin-bottom: 20px;
-            }
-
-            .hero h2 {
-                font-size: 2.8em;
-            }
-
-            .hero p {
-                font-size: 1.3em;
-            }
         }
     </style>
 </head>
@@ -248,9 +169,8 @@
         <p>Shop the finest shirts, designed just for you.</p>
     </section>
 
-    <!-- Featured Products Section -->
+    <!-- Product Section -->
     <section id="shop">
-        <h2 style="text-align:center; font-size: 2.5em; margin-top: 40px;">Featured Shirts</h2>
         <div class="product-card-container">
             <div class="product-card">
                 <img src="shirt1.jpg" alt="Shirt 1">
@@ -275,7 +195,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Wearify. All rights reserved. <a href="#">Privacy Policy</a></p>
+        <p>&copy; 2024 Wearify. All rights reserved.</p>
     </footer>
 
 </body>
