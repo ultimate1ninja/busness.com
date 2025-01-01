@@ -29,7 +29,7 @@
         header h1 {
             font-size: 2.5em;
             letter-spacing: 2px;
-            color: gold
+            color: gold;
         }
 
         nav a {
@@ -55,10 +55,23 @@
         .hero h2 {
             font-size: 4em;
             margin-bottom: 10px;
+            animation: popText 1.5s ease-in-out 1; /* Pop effect runs once */
         }
 
-        .hero p {
-            font-size: 1.6em;
+        /* Pop Animation */
+        @keyframes popText {
+            0% {
+                transform: scale(1);
+                color: #fff;
+            }
+            50% {
+                transform: scale(1.2);
+                color: #ff7e5f; /* Color change to match background */
+            }
+            100% {
+                transform: scale(1);
+                color: #fff;
+            }
         }
 
         /* Product Cards */
@@ -117,29 +130,26 @@
         }
 
         /* Animations */
-        @keyframes switchPositions {
+        @keyframes smoothMove {
             0%, 100% {
-                transform: translateX(-300px); /* Left position */
+                transform: translateX(0); /* Start and end in the same position */
             }
-            33% {
-                transform: translateX(0); /* Middle position */
-            }
-            66% {
-                transform: translateX(300px); /* Right position */
+            50% {
+                transform: translateX(20px); /* Small movement */
             }
         }
 
         /* Card Positions */
         .product-card:nth-child(1) {
-            animation: switchPositions 6s infinite ease-in-out;
+            animation: smoothMove 4s infinite ease-in-out;
         }
 
         .product-card:nth-child(2) {
-            animation: switchPositions 6s infinite ease-in-out 2s; /* Delayed start */
+            animation: smoothMove 4s infinite ease-in-out 1s; /* Delayed start */
         }
 
         .product-card:nth-child(3) {
-            animation: switchPositions 6s infinite ease-in-out 4s; /* Delayed start */
+            animation: smoothMove 4s infinite ease-in-out 2s; /* Delayed start */
         }
 
         /* Footer */
@@ -173,19 +183,19 @@
     <section id="shop">
         <div class="product-card-container">
             <div class="product-card">
-                <img src="shirt1.jpg" alt="Shirt 1">
+                <img src="shirt1.jpg" alt="Stylish black shirt">
                 <h3>Stylish Shirt 1</h3>
                 <p>$29.99</p>
                 <button class="order-button">Order Now</button>
             </div>
             <div class="product-card">
-                <img src="shirt2.jpg" alt="Shirt 2">
+                <img src="shirt2.jpg" alt="Stylish white shirt">
                 <h3>Stylish Shirt 2</h3>
                 <p>$34.99</p>
                 <button class="order-button">Order Now</button>
             </div>
             <div class="product-card">
-                <img src="shirt3.jpg" alt="Shirt 3">
+                <img src="shirt3.jpg" alt="Stylish blue shirt">
                 <h3>Stylish Shirt 3</h3>
                 <p>$39.99</p>
                 <button class="order-button">Order Now</button>
