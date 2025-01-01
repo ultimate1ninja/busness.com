@@ -87,14 +87,31 @@
             width: 250px;
             text-align: center;
             transform-style: preserve-3d;
-            transition: transform 0.5s ease, box-shadow 0.3s ease;
+            transition: transform 0.5s ease, box-shadow 0.3s ease, order 0.5s ease;
             cursor: pointer;
             overflow: hidden;
+            perspective: 1500px; /* Add perspective for 3D effect */
         }
 
+        /* Hover effect for tilting and movement */
         .product-card:hover {
-            transform: rotateY(15deg) rotateX(10deg) scale(1.05);
+            transform: rotateY(15deg) rotateX(-10deg) scale(1.05);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-card:hover:nth-child(1) {
+            order: 3; /* Change the order on hover */
+            transform: rotateY(15deg) rotateX(-10deg) scale(1.05) translateX(150px); /* Move to the right */
+        }
+
+        .product-card:hover:nth-child(2) {
+            order: 1; /* Change the order on hover */
+            transform: rotateY(15deg) rotateX(-10deg) scale(1.05) translateX(-150px); /* Move to the left */
+        }
+
+        .product-card:hover:nth-child(3) {
+            order: 2; /* Change the order on hover */
+            transform: rotateY(15deg) rotateX(-10deg) scale(1.05) translateX(0); /* Center */
         }
 
         .product-card img {
