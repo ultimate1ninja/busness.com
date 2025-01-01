@@ -5,108 +5,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wearify - Stylish Shirts</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
     <style>
         /* Global Styles */
         body {
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(to bottom, #ffffff, #f4f4f4);
             margin: 0;
             padding: 0;
+            background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient background */
+            color: #333;
+            box-sizing: border-box;
             overflow-x: hidden;
         }
 
+        /* Header */
         header {
-            background-color: #333;
+            background-color: rgba(0, 0, 0, 0.7);
             color: #fff;
-            padding: 15px 20px;
+            padding: 20px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         header h1 {
-            margin: 0;
-            font-size: 1.8em;
+            font-size: 2.5em;
+            letter-spacing: 2px;
         }
 
         nav a {
             color: #fff;
-            margin: 0 10px;
+            margin: 0 15px;
             text-decoration: none;
-            font-size: 1em;
-            transition: color 0.3s ease;
+            font-size: 1.2em;
+            transition: color 0.3s;
         }
 
         nav a:hover {
             color: #28a745;
         }
 
+        /* Hero Section */
         .hero {
-            background: url('download.jpg') no-repeat center center/cover;
-            background-color: #333; /* Fallback color */
-            text-align: center;
-            padding: 100px 20px;
+            background: url('hero-image.jpg') no-repeat center center/cover;
             color: white;
+            padding: 120px 20px;
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
         .hero h2 {
-            font-size: 3em;
-            margin: 0;
+            font-size: 4em;
+            margin-bottom: 10px;
+            animation: slideIn 1s ease-out;
         }
 
         .hero p {
-            font-size: 1.5em;
-            margin: 10px 0;
+            font-size: 1.6em;
+            opacity: 0.8;
+            animation: slideIn 1.2s ease-out;
         }
 
-        .main-content {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 10px;
-        }
-
-        /* Product Card Styles */
+        /* 3D Product Cards */
         .product-card-container {
             display: flex;
             justify-content: center;
-            align-items: center;
-            gap: 20px;
+            gap: 30px;
+            padding: 40px;
             flex-wrap: wrap;
+            animation: fadeInUp 1.5s ease-out;
         }
 
         .product-card {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient for card background */
+            border-radius: 10px;
             padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 280px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 250px;
             text-align: center;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            overflow: hidden;
         }
 
         .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+            transform: rotateY(15deg) rotateX(10deg) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
 
         .product-card img {
-            width: 150px;
-            height: 150px;
+            width: 100%;
+            height: 250px;
             object-fit: cover;
             border-radius: 8px;
-            margin-bottom: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .product-card h3 {
+            font-size: 1.5em;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        .product-card p {
+            font-size: 1.2em;
+            color: #fff;
+            opacity: 0.9;
         }
 
         .order-button {
             background-color: #28a745;
             color: #fff;
-            padding: 10px 20px;
+            padding: 12px 25px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            font-size: 1em;
             transition: background-color 0.3s ease, transform 0.2s ease;
+            letter-spacing: 1px;
         }
 
         .order-button:hover {
@@ -119,28 +143,14 @@
             box-shadow: 0 0 5px #28a745;
         }
 
-        .customization {
-            text-align: center;
-            padding: 50px 20px;
-            background: linear-gradient(to right, #add8e6, #06402b);
-            color: white;
-            border-radius: 8px;
-            margin: 20px 0;
-        }
-
-        .customization img {
-            width: 250px;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-
+        /* Footer */
         footer {
-            background-color: #333;
+            background-color: rgba(0, 0, 0, 0.7);
             color: #fff;
             padding: 20px;
             text-align: center;
+            font-size: 1.2em;
+            margin-top: 40px;
         }
 
         footer a {
@@ -148,9 +158,47 @@
             text-decoration: none;
         }
 
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Media Queries */
         @media (max-width: 768px) {
             .product-card-container {
                 flex-direction: column;
+                align-items: center;
             }
 
             .product-card {
@@ -158,57 +206,53 @@
                 margin-bottom: 20px;
             }
 
-            body {
-                font-size: 14px; /* Responsive typography */
-            }
-
             .hero h2 {
-                font-size: 2.5em;
+                font-size: 2.8em;
             }
 
             .hero p {
-                font-size: 1.2em;
+                font-size: 1.3em;
             }
         }
     </style>
 </head>
 <body>
+
     <!-- Header -->
     <header>
         <h1>Wearify</h1>
         <nav>
-            <a href="#customization">Personalize</a>
-            <a href="#featured-shirts">Featured</a>
+            <a href="#home">Home</a>
+            <a href="#shop">Shop</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="home">
         <h2>Elevate Your Style</h2>
-        <p>Discover the finest shirts tailored just for you.</p>
+        <p>Shop the finest shirts, designed just for you.</p>
     </section>
 
-    <!-- Customization Section -->
-    <section class="customization" id="customization">
-        <h2>Personalize Your Shirt</h2>
-        <p>Add a unique touch with custom designs or text!</p>
-        <img src="a.jpg" alt="Custom Shirt Example">
-    </section>
-
-    <!-- Featured Shirts -->
-    <section class="main-content">
-        <h2 id="featured-shirts">Featured Shirts</h2>
+    <!-- Featured Products Section -->
+    <section id="shop">
+        <h2 style="text-align:center; font-size: 2.5em; margin-top: 40px;">Featured Shirts</h2>
         <div class="product-card-container">
             <div class="product-card">
-                <img src="por.jpg" alt="Porsche Shirt">
-                <h3>Porsche Shirt</h3>
+                <img src="shirt1.jpg" alt="Shirt 1">
+                <h3>Stylish Shirt 1</h3>
                 <p>$29.99</p>
                 <button class="order-button">Order Now</button>
             </div>
             <div class="product-card">
-                <img src="dr.jpg" alt="Dream Shirt">
-                <h3>Dream Shirt</h3>
+                <img src="shirt2.jpg" alt="Shirt 2">
+                <h3>Stylish Shirt 2</h3>
+                <p>$34.99</p>
+                <button class="order-button">Order Now</button>
+            </div>
+            <div class="product-card">
+                <img src="shirt3.jpg" alt="Shirt 3">
+                <h3>Stylish Shirt 3</h3>
                 <p>$39.99</p>
                 <button class="order-button">Order Now</button>
             </div>
@@ -219,5 +263,6 @@
     <footer>
         <p>&copy; 2024 Wearify. All rights reserved. <a href="#">Privacy Policy</a></p>
     </footer>
+
 </body>
 </html>
