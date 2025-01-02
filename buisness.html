@@ -12,6 +12,7 @@
             margin: 0;
             padding: 0;
             background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient background */
+            background-color: #feb47b; /* Fallback background color */
             color: #333;
             box-sizing: border-box;
         }
@@ -55,7 +56,12 @@
         .hero h2 {
             font-size: 4em;
             margin-bottom: 10px;
-            animation: popText 1.5s ease-in-out 1; /* Pop effect runs once */
+            animation: popText 1.5s ease-in-out 1;
+            animation-play-state: var(--reduced-motion, running);
+        }
+
+        .hero p {
+            font-size: 1.5em;
         }
 
         /* Pop Animation */
@@ -66,7 +72,7 @@
             }
             50% {
                 transform: scale(1.2);
-                color: #ff7e5f; /* Color change to match background */
+                color: #ff7e5f;
             }
             100% {
                 transform: scale(1);
@@ -78,8 +84,9 @@
         .product-card-container {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            padding: 40px;
+            gap: 20px;
+            padding: 20px;
+            flex-wrap: wrap;
         }
 
         .product-card {
@@ -91,8 +98,6 @@
             text-align: center;
             transition: transform 0.5s ease, box-shadow 0.3s ease;
             cursor: pointer;
-            transform-style: preserve-3d;
-            position: relative;
         }
 
         .product-card img {
@@ -129,35 +134,56 @@
             transform: scale(1.05);
         }
 
-        /* Animations */
-        @keyframes smoothMove {
-            0%, 100% {
-                transform: translateX(0); /* Start and end in the same position */
-            }
-            50% {
-                transform: translateX(20px); /* Small movement */
-            }
-        }
-
-        /* Card Positions */
-        .product-card:nth-child(1) {
-            animation: smoothMove 4s infinite ease-in-out;
-        }
-
-        .product-card:nth-child(2) {
-            animation: smoothMove 4s infinite ease-in-out 1s; /* Delayed start */
-        }
-
-        .product-card:nth-child(3) {
-            animation: smoothMove 4s infinite ease-in-out 2s; /* Delayed start */
-        }
-
         /* Footer */
         footer {
             background-color: black;
             color: #fff;
             padding: 20px;
             text-align: center;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            nav a {
+                font-size: 1em;
+                margin: 5px;
+            }
+
+            .hero h2 {
+                font-size: 2.5em;
+            }
+
+            .hero p {
+                font-size: 1.2em;
+            }
+
+            .product-card-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .product-card {
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .product-card img {
+                height: 200px;
+            }
+
+            footer {
+                font-size: 0.9em;
+            }
         }
     </style>
 </head>
