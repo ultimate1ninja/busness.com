@@ -14,6 +14,8 @@
             background-color: #e0e0e0;
             color: #333;
             box-sizing: border-box;
+            perspective: 1000px; /* Enables 3D perspective */
+            overflow-x: hidden;
         }
 
         header {
@@ -61,6 +63,7 @@
             margin-bottom: 15px;
             text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
             color: #e74c3c;
+            animation: fadeIn 1s ease;
         }
 
         .hero p {
@@ -90,10 +93,28 @@
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
+            position: relative;
+            transform-style: preserve-3d; /* Enable 3D transformations */
+            perspective: 1000px;
+        }
+
+        .product-card::before, .product-card::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            transition: opacity 0.3s;
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .product-card:hover::before {
+            opacity: 1;
         }
 
         .product-card:hover {
-            transform: translateY(-10px);
+            transform: rotateY(5deg) rotateX(5deg); /* 3D rotation effect */
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
         }
 
@@ -103,6 +124,11 @@
             object-fit: cover;
             border-radius: 12px;
             margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card img:hover {
+            transform: scale(1.1); /* Scale effect */
         }
 
         .product-card h3 {
@@ -163,6 +189,18 @@
                 margin-bottom: 20px;
             }
         }
+
+        /* Keyframes for animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
@@ -205,21 +243,21 @@
                 <p>$39.99</p>
                 <button class="order-button" data-product="Stylish Shirt 3" data-price="$39.99">Order Now</button>
             </div>
-
+        </div>
     </section>
 
     <!-- Monochrome Section -->
     <section id="monochrome">
-        <h1>Monochrome Collection</h1>
+        <h2>Monochrome Collection</h2>
         <div class="product-card-container">
             <div class="product-card">
-                <img src="dr.jpg" alt="Monochrome black shirt">
+                <img src="monochrome1.jpg" alt="Monochrome black shirt">
                 <h3>Monochrome Shirt 1</h3>
                 <p>$29.99</p>
                 <button class="order-button" data-product="Monochrome Shirt 1" data-price="$29.99">Order Now</button>
             </div>
             <div class="product-card">
-                <img src="hehe.jpg" alt="Monochrome white shirt">
+                <img src="monochrome2.jpg" alt="Monochrome white shirt">
                 <h3>Monochrome Shirt 2</h3>
                 <p>$34.99</p>
                 <button class="order-button" data-product="Monochrome Shirt 2" data-price="$34.99">Order Now</button>
@@ -247,7 +285,7 @@
 
     <!-- Polychrome Section -->
     <section id="polychrome">
-        <h1>Polychrome Collection</h1>
+        <h2>Polychrome Collection</h2>
         <div class="product-card-container">
             <div class="product-card">
                 <img src="polychrome1.jpg" alt="Polychrome multi-colored shirt">
