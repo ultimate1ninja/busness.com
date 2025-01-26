@@ -73,14 +73,27 @@
             margin: 0 auto;
         }
 
+        /* Section Styles */
+        section {
+            background-color: #f8f8f8; /* Light background for sections */
+            padding: 40px 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 30px; /* Increased bottom margin for spacing */
+        }
+
         /* Product Section */
         .product-card-container {
-            margin-top: 0;
-            padding-top: 50px;
             display: flex;
             justify-content: center;
-            gap: 30px;
-            padding: 50px 20px;
+            gap: 20px; /* Reduced gap to make the overall section look compact */
             flex-wrap: wrap;
         }
 
@@ -88,7 +101,7 @@
             background: linear-gradient(to right, silver, gold);
             border-radius: 15px;
             padding: 25px;
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 12px 35px rgba(0, 0            0, 0.1);
             width: 280px;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -185,8 +198,8 @@
             }
 
             .product-card {
-                width: 100%;
-                margin-bottom: 20px;
+                width: 100%; /* Make product cards full width on smaller screens */
+                margin-bottom: 20px; /* Space between cards */
             }
         }
 
@@ -268,18 +281,6 @@
                 <p>$39.99</p>
                 <button class="order-button" data-product="Monochrome Shirt 3" data-price="$39.99">Order Now</button>
             </div>
-            <div class="product-card">
-                <img src="monochrome4.jpg" alt="Monochrome navy shirt">
-                <h3>Monochrome Shirt 4</h3>
-                <p>$41.99</p>
-                <button class="order-button" data-product="Monochrome Shirt 4" data-price="$41.99">Order Now</button>
-            </div>
-            <div class="product-card">
-                <img src="monochrome5.jpg" alt="Monochrome cream shirt">
-                <h3>Monochrome Shirt 5</h3>
-                <p>$37.99</p>
-                <button class="order-button" data-product="Monochrome Shirt 5" data-price="$37.99">Order Now</button>
-            </div>
         </div>
     </section>
 
@@ -304,18 +305,6 @@
                 <h3>Polychrome Shirt 3</h3>
                 <p>$49.99</p>
                 <button class="order-button" data-product="Polychrome Shirt 3" data-price="$49.99">Order Now</button>
-            </div>
-            <div class="product-card">
-                <img src="polychrome4.jpg" alt="Polychrome abstract shirt">
-                <h3>Polychrome Shirt 4</h3>
-                <p>$54.99</p>
-                <button class="order-button" data-product="Polychrome Shirt 4" data-price="$54.99">Order Now</button>
-            </div>
-            <div class="product-card">
-                <img src="polychrome5.jpg" alt="Polychrome floral shirt">
-                <h3>Polychrome Shirt 5</h3>
-                <p>$59.99</p>
-                <button class="order-button" data-product="Polychrome Shirt 5" data-price="$59.99">Order Now</button>
             </div>
         </div>
     </section>
