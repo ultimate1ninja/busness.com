@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wearify - Stylish Shirts</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+    
     <style>
         /* Global Styles */
         body {
@@ -14,7 +16,7 @@
             background-color: #e0e0e0;
             color: #333;
             box-sizing: border-box;
-            perspective: 1000px; /* Enables 3D perspective */
+            perspective: 1000px;
             overflow-x: hidden;
         }
 
@@ -49,13 +51,24 @@
             color: #e74c3c;
         }
 
+        /* Hamburger Button */
+        .hamburger {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5em;
+            color: #fff;
+        }
+
         /* Hero Section */
         .hero {
             text-align: center;
             padding: 100px 20px 80px;
             background: #1b2735;
             color: #fff;
-            margin-top: -15px;
         }
 
         .hero h2 {
@@ -63,7 +76,6 @@
             margin-bottom: 15px;
             text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
             color: #e74c3c;
-            animation: fadeIn 1s ease;
         }
 
         .hero p {
@@ -75,7 +87,7 @@
 
         /* Section Styles */
         section {
-            background-color: #f8f8f8; /* Light background for sections */
+            background-color: #f8f8f8;
             padding: 40px 20px;
             margin: 20px 0;
             border-radius: 10px;
@@ -86,14 +98,14 @@
             text-align: center;
             font-size: 2.5em;
             color: #333;
-            margin-bottom: 30px; /* Increased bottom margin for spacing */
+            margin-bottom: 30px;
         }
 
         /* Product Section */
         .product-card-container {
             display: flex;
             justify-content: center;
-            gap: 20px; /* Reduced gap to make the overall section look compact */
+            gap: 20px;
             flex-wrap: wrap;
         }
 
@@ -101,34 +113,11 @@
             background: linear-gradient(to right, silver, gold);
             border-radius: 15px;
             padding: 25px;
-            box-shadow: 0 12px 35px rgba(0, 0            0, 0.1);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
             width: 280px;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
-            position: relative;
-            transform-style: preserve-3d; /* Enable 3D transformations */
-            perspective: 1000px;
-        }
-
-        .product-card::before, .product-card::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            border-radius: 15px;
-            background: rgba(255, 255, 255, 0.1);
-            transition: opacity 0.3s;
-            opacity: 0;
-            pointer-events: none;
-        }
-        
-        .product-card:hover::before {
-            opacity: 1;
-        }
-
-        .product-card:hover {
-            transform: rotateY(5deg) rotateX(5deg); /* 3D rotation effect */
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
         }
 
         .product-card img {
@@ -141,7 +130,7 @@
         }
 
         .product-card img:hover {
-            transform: scale(1.1); /* Scale effect */
+            transform: scale(1.1);
         }
 
         .product-card h3 {
@@ -186,6 +175,36 @@
             font-size: 0.9em;
         }
 
+        /* Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -300px; /* Hidden by default */
+            width: 300px;
+            height: 100vh;
+            background-color: #1b2735;
+            color: #fff;
+            padding: 30px;
+            transition: all 0.3s ease;
+            z-index: 20;
+        }
+
+        .sidebar.open {
+            right: 0; /* Visible when open */
+        }
+
+        .sidebar nav a {
+            display: block;
+            color: #fff;
+            margin-bottom: 15px;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        .sidebar nav a:hover {
+            color: #e74c3c;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             header {
@@ -198,20 +217,8 @@
             }
 
             .product-card {
-                width: 100%; /* Make product cards full width on smaller screens */
-                margin-bottom: 20px; /* Space between cards */
-            }
-        }
-
-        /* Keyframes for animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+                width: 100%;
+                margin-bottom: 20px;
             }
         }
     </style>
@@ -221,12 +228,25 @@
     <!-- Header -->
     <header>
         <h1>Wearify</h1>
+        <button class="hamburger">
+            <i class="fas fa-align-justify"></i>
+        </button>
         <nav>
             <a href="#home">Home</a>
             <a href="#shop">Shop</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <h2>Wearify</h2>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#shop">Shop</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -259,56 +279,6 @@
         </div>
     </section>
 
-    <!-- Monochrome Section -->
-    <section id="monochrome">
-        <h2>Monochrome Collection</h2>
-        <div class="product-card-container">
-            <div class="product-card">
-                <img src="monochrome1.jpg" alt="Monochrome black shirt">
-                <h3>Monochrome Shirt 1</h3>
-                <p>$29.99</p>
-                <button class="order-button" data-product="Monochrome Shirt 1" data-price="$29.99">Order Now</button>
-            </div>
-            <div class="product-card">
-                <img src="monochrome2.jpg" alt="Monochrome white shirt">
-                <h3>Monochrome Shirt 2</h3>
-                <p>$34.99</p>
-                <button class="order-button" data-product="Monochrome Shirt 2" data-price="$34.99">Order Now</button>
-            </div>
-            <div class="product-card">
-                <img src="monochrome3.jpg" alt="Monochrome grey shirt">
-                <h3>Monochrome Shirt 3</h3>
-                <p>$39.99</p>
-                <button class="order-button" data-product="Monochrome Shirt 3" data-price="$39.99">Order Now</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Polychrome Section -->
-    <section id="polychrome">
-        <h2>Polychrome Collection</h2>
-        <div class="product-card-container">
-            <div class="product-card">
-                <img src="polychrome1.jpg" alt="Polychrome multi-colored shirt">
-                <h3>Polychrome Shirt 1</h3>
-                <p>$39.99</p>
-                <button class="order-button" data-product="Polychrome Shirt 1" data-price="$39.99">Order Now</button>
-            </div>
-            <div class="product-card">
-                <img src="polychrome2.jpg" alt="Polychrome patterned shirt">
-                <h3>Polychrome Shirt 2</h3>
-                <p>$44.99</p>
-                <button class="order-button" data-product="Polychrome Shirt 2" data-price="$44.99">Order Now</button>
-            </div>
-            <div class="product-card">
-                <img src="polychrome3.jpg" alt="Polychrome vibrant shirt">
-                <h3>Polychrome Shirt 3</h3>
-                <p>$49.99</p>
-                <button class="order-button" data-product="Polychrome Shirt 3" data-price="$49.99">Order Now</button>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer>
         <p>© 2024 Wearify. All rights reserved.</p>
@@ -316,7 +286,20 @@
 
     <!-- JavaScript -->
     <script>
-        document.querySelectorAll('.order-button').forEach(button => {
+        // Get the sidebar and the hamburger button
+        const sidebar = document.getElementById('sidebar');
+        const hamburger = document.querySelector('.hamburger');
+
+        // Toggle the sidebar when the hamburger button is clicked
+        hamburger.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+        });
+
+        // Get the 'order-button' elements
+        const orderButtons = document.querySelectorAll('.order-button');
+
+        // Add an event listener to each order button
+        orderButtons.forEach(button => {
             button.addEventListener('click', () => {
                 const productName = button.getAttribute('data-product');
                 const productPrice = button.getAttribute('data-price');
@@ -324,7 +307,7 @@
                 
                 const whatsappURL = `https://wa.me/${whatsappNumber}?text=Hello,%20I%20would%20like%20to%20order%20${encodeURIComponent(productName)}%20for%20${encodeURIComponent(productPrice)}.`;
                 
-                window.open(whatsappURL, '_blank');
+                window.open(whatsappURL, '_blank'); // Open WhatsApp link
             });
         });
     </script>
